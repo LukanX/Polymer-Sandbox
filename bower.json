@@ -1,0 +1,17 @@
+{
+  "name": "0801-MobileProto",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.4",
+    "core-elements": "Polymer/core-elements#~0.3.4"
+  }
+}

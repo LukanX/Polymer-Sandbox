@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RetailMeNot</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+   <link rel="import" href="bower_components/core-toolbar/core-input.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+
+  <style>
+  html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: Gotham, "Helvetica Neue", sans-serif; font-weight: regular;
+  }
+
+  core-header-panel{
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  core-toolbar{
+    background: #602D6C;
+    color: white;
+  }
+
+  #navbar{
+  	background: white;
+  	color: #602D6C;
+  }
+
+  #tabs paper-tab::shadow #ink{
+  	color: #602D6C;
+  }
+
+  paper-tabs::shadow #selectionBar{
+  	background-color: #602D6C;
+  }
+
+  #tabs{
+    width: 100%;
+    margin: 0;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;  
+  }
+
+  #logo{
+  	display: block;
+  	margin: auto;
+  	max-width: 185px;
+  }
+  </style>
+
+  <body unresolved touch-action="auto">
+  <core-header-panel>
+  	<core-toolbar class = "medium-tall">
+  		<img src="img/logo.png" alt="" id = "logo">
+  	</div>
+    	<div class ="bottom fit" id="navbar">
+      <paper-tabs id="tabs" valueattr="name" selected="ourBest" self-end noink="true">
+        <paper-tab name="ourBest">Our Best</paper-tab>
+        <paper-tab name="justForYou">Just for You</paper-tab>
+        <paper-tab name="popular">Popular</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
+    </div>
+    <div class="container" layout vertical center>
+      <post-list show="all"></post-list>
+    </div>
+  </core-header-panel>
+	
+</head>
+<body>
+	
+</body>
+</html>
