@@ -26,6 +26,10 @@ textarea {
   resize: none;
 }
 
+#input{
+  color: white;
+}
+
 textarea[fit] {
   position: absolute;
   top: 0;
