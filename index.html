@@ -107,8 +107,8 @@
   .merchant-square{
   		padding: 10px;
   		float: left;
-  		width: 3.25em;
-  		height: 3.25em;
+  		width: 3em;
+  		height: 3em;
   		background: #fff;
   		position: relative;
   		border-radius: 2px;
@@ -125,7 +125,7 @@
   		font-size: 1.75em;
   	}
 
-  	.fino h2{
+  	.info h2{
   		font-size: 1.25em;
   	}
 
@@ -168,6 +168,21 @@
   	width: 100%;
   }
 
+  #featured core-icon{
+  	position: absolute;
+  	top: 1em;
+  	right: 1em;
+  }
+
+  #featured core-icon.save-outline{
+  	fill: white;
+  	z-index: 10;
+  }
+
+  #featured core-icon#save{
+  	fill: rgba(0,0,0,.25);
+  }
+
   </style>
 
   <body unresolved touch-action="auto">
@@ -191,6 +206,18 @@
     
     <div class="container" layout vertical center>
 	    <div id="featured" layout horizontal bottom>
+	    	<core-icon
+	    		class="save-outline"
+		      icon="star-outline"
+		      size= "40"
+		      on-tap="{{favoriteTapped}}">
+		    </core-icon>
+	    	<core-icon
+	    		id="save"
+		      icon="star"
+		      size= "40"
+		      on-tap="{{favoriteTapped}}">
+		    </core-icon>
     		<div class="image-overlay">
     			<div class="scaler"></div>
     		</div>
