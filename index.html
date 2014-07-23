@@ -95,7 +95,11 @@
 
   .container{
   	width: 100%;
-  	background: #adadad;
+  	background: #fff;
+  	padding: 3px;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
   }
 
   featured-coupon{
@@ -106,7 +110,7 @@
   </style>
 
   <body unresolved touch-action="auto">
-  <core-header-panel>
+  <core-header-panel mode="waterfall">
   	<core-toolbar class = "tall">
   		<div flex self-center class="middle search-container">
 				<core-field>
