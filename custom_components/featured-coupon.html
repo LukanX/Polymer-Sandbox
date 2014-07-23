@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/core-icons/iconsets/icons.html">
 <link rel="import" href="../bower_components/core-icon/core-icon.html">
-<link rel="stylesheet" href="css/universal.css">
+<link rel="stylesheet" href="../css/universal.css">
 
 
 <polymer-element name="featured-coupon" attributes="show">
@@ -11,6 +11,8 @@
 	  	width: 100%;
 	  	position: relative;
 	  	overflow: hidden;
+	  	background: url(../img/featured.jpg) no-repeat;
+	  	background-size: contain;
 	  }
 
   .merchant-square{
@@ -35,13 +37,13 @@
   	polyfill-next-selector{ content: '.featured-info h1'; }
 
   	.featured-info ::content h1{
-  		font-size: 1.75em;
+  		font-size: 1.6em;
   	}
 
   	polyfill-next-selector{ content: '.featured-info h2'; }
 
   	.featured-info ::content h2{
-  		font-size: 1.25em;
+  		font-size: 1.2em;
   	}
 
   	polyfill-next-selector{ content: '.merchant-square img'; }
