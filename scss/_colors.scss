@@ -1,0 +1,69 @@
+/* ###################### VARIABLES ###################### */
+
+// Personas
+$sarah: #c9c900;
+$luxury: #52575f;
+$hannah: #66cdce;
+$paycheck: #ff8800;
+$max: #f93e60;
+$raymond: #794bad;
+
+
+//Other colors
+$link-blue: #00bbee;
+$link-blue-hover: #0093bb;
+$light-grey: #c9c9c9;
+$dark-grey: #6f6f64;
+
+/* ###################### Classes ###################### */
+
+
+//Sarah Colors
+.sarah{ color: $sarah; }
+.bg-sarah{ background-color: $sarah; }
+.border-sarah{ border-color: $sarah; }
+
+//Luxury Colors
+.luxury{ color: $luxury; }
+.bg-luxury{ background-color: $luxury; }
+.border-luxury{ border-color: $luxury; }
+
+//Hannah Colors
+.hannah{ color: $hannah; }
+.bg-hannah{ background-color: $hannah; }
+.border-hannah{ border-color: $hannah; }
+
+//Paycheck to Paycheck Colors
+.paycheck{ color: $paycheck; }
+.bg-paycheck{ background-color: $paycheck }
+.border-paycheck{ border-color: $paycheck; }
+
+//Max
+.max{ color: $max; }
+.bg-max{ background-color: $max; }
+.border-max{ border-color: $max; }
+
+//Raymond
+.raymond{ color: $raymond; }
+.bg-raymond { background-color: $raymond; }
+.border-raymond{ border-color: $raymond; }
+
+.light-grey{ color: $light-grey; }
+.border-light-grey{ border-color: $light-grey }
+
+.border-dark-grey{border-color:$dark-grey}
+
+.bg-white{
+	background-color: white;
+}
+
+a{
+	color: $link-blue;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	&:hover{
+		color: $link-blue-hover;
+	}
+}
+

@@ -1,53 +1,169 @@
-<link rel="import" href="../components/polymer/polymer.html">
-<link rel="import" href="../post-service/post-service.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icons/iconsets/icons.html">
+<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<link rel="stylesheet" href="css/universal.css">
 
 
-<polymer-element name="post-list" attributes="show">
+<polymer-element name="featured-coupon" attributes="show">
 	<template>
     <style>
-    :host {
-      display: block;
-      width: 100%;
-    }
-    post-card {
-      margin-bottom: 30px;
-    }
-    </style>
-		<div id="featured" layout horizontal bottom>
-			<core-icon
-				class="save-outline"
-		    icon="star-outline"
-		    size= "40"
-		    on-tap="{{favoriteTapped}}">
-		  </core-icon>
-			<core-icon
-				id="save"
-		    icon="star"
-		    size= "40"
-		    on-tap="{{favoriteTapped}}">
-		  </core-icon>
-			<div class="image-overlay">
-				<div class="scaler"></div>
+    :host{
+	  	width: 100%;
+	  	position: relative;
+	  	overflow: hidden;
+	  }
+
+  .merchant-square{
+		padding: 10px;
+		float: left;
+		width: 3em;
+		height: 3em;
+		background: #fff;
+		position: relative;
+		border-radius: 2px;
+		margin-right: 5%;
+	}
+
+	polyfill-next-selector{ content: '.featured-info h1, .featured-info h2'; }
+
+   .featured-info ::content h1, .featured-info ::content h2{
+  		margin: 0;
+  		color: white;
+  		font-weight: normal;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h1'; }
+
+  	.featured-info ::content h1{
+  		font-size: 1.75em;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h2'; }
+
+  	.featured-info ::content h2{
+  		font-size: 1.25em;
+  	}
+
+  	polyfill-next-selector{ content: '.merchant-square img'; }
+
+  	.merchant-square ::content img{
+  		width: 80%;
+  		position: absolute;
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		margin: auto;
+  	}
+
+.featured-info{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 5%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+  .image-overlay{
+  	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(55%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+		width: 100%;
+		height: 100%;
+
+  }
+
+  .scaler{
+  	padding-top: 67.5%;
+  	width: 100%;
+  }
+
+  .save-area{
+  	position: absolute;
+  	top: 1em;
+  	right: 1em;
+  }
+
+  :host core-icon.save-outline{
+  	fill: white;
+  	z-index: 10;
+  }
+
+  core-icon#save{
+  	fill: rgba(0,0,0,.5);
+  	transition: .25s ease;
+  	cursor: pointer;
+  }
+
+  core-icon#save:hover{
+  	fill: rgba(0,0,0,.75);
+  }
+
+  :host([favorite]) core-icon#save{
+  	fill: rgba(236,218,31,1);
+  }
+  .save-area p{
+  	margin: -5px 0 0;
+  	color: white;
+  	text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+  	text-align: center;
+  	font-size: .8em;
+  }
+
+
+  </style>
+
+	<div id="featured">
+		<!--<core-icon
+			class="save-outline"
+	    icon="star-outline"
+	    size= "40"
+	    on-tap="{{favoriteTapped}}"> 
+	  </core-icon> -->
+			<div class="save-area">
+				<core-icon
+					id="save"
+			    icon="star"
+			    size= "40"
+			    on-tap="{{favoriteTapped}}">
+			  </core-icon>
+			  <p class="save">save</p>
 			</div>
-			<div class="featured-info">
-				<div class="merchant-square">
-					<img src="img/sears-logo.jpg" alt="">
-				</div>
-				<div class="info" flex>
-					<h1>25% Off Sports Gear</h1>
-					<h2>In-Store Coupon</h2>
-				</div>
+		<div class="image-overlay">
+			<div class="scaler"></div>
+		</div>
+		<div class="featured-info" layout horizontal bottom>
+			<div class="merchant-square">
+				<content select="img"></conent>
+			</div>
+			<div class="info" flex>
+				<content select="h1"></content>
+				<content select="h2"></content>
 			</div>
 		</div>
-	</template>
-</polymer>
+	</div>
+</template>
 
 
  <script>
   Polymer({
-    handleFavorite: function(event, detail, sender) {
-      var post = sender.templateInstance.model.post;
-      this.$.service.setFavorite(post.uid, post.favorite);
+  	publish: {
+      favorite: {
+        value: false,
+        reflect: true
+	      }
+	    },
+    favoriteTapped: function(event, detail, sender) {
+      this.favorite = !this.favorite;
+      this.fire('favorite-tap');
     }
   });
   </script>
+ </polymer-element>
