@@ -27,10 +27,22 @@
 
 	polyfill-next-selector{ content: '.featured-info h1, .featured-info h2'; }
 
-   .featured-info ::content h3, .featured-info ::content h4{
+   .featured-info ::content h1, .featured-info ::content h2{
   		margin: 0;
   		color: white;
   		font-weight: normal;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h1'; }
+
+  	.featured-info ::content h1{
+  		font-size: 1.45em;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h2'; }
+
+  	.featured-info ::content h2{
+  		font-size: 1.15em;
   	}
 
   	polyfill-next-selector{ content: '.merchant-square img'; }
@@ -133,8 +145,8 @@
 				<content select="img"></conent>
 			</div>
 			<div class="info" flex>
-				<content select="h3"></content>
-				<content select="h4"></content>
+				<content select="h1"></content>
+				<content select="h2"></content>
 			</div>
 		</div>
 	</div>
