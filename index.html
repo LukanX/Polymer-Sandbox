@@ -20,7 +20,7 @@
     height: 100%;
     margin: 0;
     background-color: #E5E5E5;
-    font-family: Gotham, "Helvetica Neue", sans-serif; font-weight: regular;
+    font-family: "Gotham Medium", "Helvetica Neue", sans-serif; font-weight: regular;
   }
 
   core-header-panel{
@@ -56,6 +56,7 @@
       -ms-user-select: none;
       -o-user-select: none;
       user-select: none;  
+      text-transform: uppercase;
   }
   .search-container{
 		display: block;
@@ -90,6 +91,76 @@
   	top: -32px;
   }
 
+  .container{
+  	width: 100%;
+  	background: #adadad;
+  }
+
+  #featured{
+  	width: 100%;
+  	background: url(img/featured.jpg) no-repeat;
+  	background-size: contain;
+  	position: relative;
+  }
+
+  .merchant-square{
+  		padding: 10px;
+  		float: left;
+  		width: 3.25em;
+  		height: 3.25em;
+  		background: #fff;
+  		position: relative;
+  		border-radius: 2px;
+  		margin-right: 5%;
+  	}
+
+  	.info h1, .info h2{
+  		margin: 0;
+  		color: white;
+  		font-weight: normal;
+  	}
+
+  	.merchant-square img{
+  		width: 80%;
+  		position: absolute;
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		margin: auto;
+  	}
+
+	#featured .featured-info{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 5%;
+	}
+
+  #featured .image-overlay{
+  	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(55%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.65) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+		width: 100%;
+		height: 100%;
+
+  }
+
+  .info{
+  	float: left;
+  	width: 75%;
+  }
+
+  .scaler{
+  	padding-top: 67.5%;
+  	width: 100%;
+  }
+
   </style>
 
   <body unresolved touch-action="auto">
@@ -108,11 +179,25 @@
         <paper-tab name="justForYou">Just for You</paper-tab>
         <paper-tab name="popular">Popular</paper-tab>
       </paper-tabs>
+      </div>
     </core-toolbar>
-    </div>
+    
     <div class="container" layout vertical center>
-      <post-list show="all"></post-list>
-    </div>
+	    <div id="featured">
+    		<div class="image-overlay">
+    			<div class="scaler"></div>
+    		</div>
+    		<div class="featured-info">
+    			<div class="merchant-square">
+    				<img src="img/sears-logo.jpg" alt="">
+    			</div>
+    			<div class="info">
+    				<h1>Up to 60% Off</h1>
+    				<h2>In-Store Coupon</h2>
+    			</div>
+    		</div>
+	    </div>
+	  </div>
   </core-header-panel>
 	
 </head>
