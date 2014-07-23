@@ -1,0 +1,97 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icons/iconsets/icons.html">
+<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<link rel="stylesheet" href="../css/universal.css">
+
+
+<polymer-element name="featured-coupon" attributes="show">
+	<template>
+    <style>
+    :host{
+	  	width: 100%;
+	  	position: relative;
+	  	overflow: hidden;
+	  	background: url(../img/featured.jpg) no-repeat;
+	  	background-size: contain;
+	  }
+
+  .merchant-square{
+		padding: 10px;
+		float: left;
+		width: 3em;
+		height: 3em;
+		background: #fff;
+		position: relative;
+		border-radius: 4px;
+		margin-right: 5%;
+	}
+
+	polyfill-next-selector{ content: '.featured-info h1, .featured-info h2'; }
+
+   .featured-info ::content h1, .featured-info ::content h2{
+  		margin: 0;
+  		color: white;
+  		font-weight: normal;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h1'; }
+
+  	.featured-info ::content h1{
+  		font-size: 1.6em;
+  	}
+
+  	polyfill-next-selector{ content: '.featured-info h2'; }
+
+  	.featured-info ::content h2{
+  		font-size: 1.2em;
+  	}
+
+  	polyfill-next-selector{ content: '.merchant-square img'; }
+
+  	.merchant-square ::content img{
+  		width: 80%;
+  		position: absolute;
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		margin: auto;
+  	}
+
+.featured-info{
+		width: 100%;
+		padding: 5%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+
+  </style>
+		<div class="featured-info" layout horizontal>
+			<div class="merchant-square">
+				<content select="img"></conent>
+			</div>
+			<div class="info" flex>
+				<content select="h1"></content>
+				<content select="h2"></content>
+			</div>
+		</div>
+</template>
+
+
+ <script>
+  Polymer({
+  	publish: {
+      favorite: {
+        value: false,
+        reflect: true
+	      }
+	    },
+    favoriteTapped: function(event, detail, sender) {
+      this.favorite = !this.favorite;
+      this.fire('favorite-tap');
+    }
+  });
+  </script>
+ </polymer-element>
