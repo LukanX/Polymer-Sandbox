@@ -1,0 +1,53 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../post-service/post-service.html">
+
+
+<polymer-element name="post-list" attributes="show">
+	<template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    post-card {
+      margin-bottom: 30px;
+    }
+    </style>
+		<div id="featured" layout horizontal bottom>
+			<core-icon
+				class="save-outline"
+		    icon="star-outline"
+		    size= "40"
+		    on-tap="{{favoriteTapped}}">
+		  </core-icon>
+			<core-icon
+				id="save"
+		    icon="star"
+		    size= "40"
+		    on-tap="{{favoriteTapped}}">
+		  </core-icon>
+			<div class="image-overlay">
+				<div class="scaler"></div>
+			</div>
+			<div class="featured-info">
+				<div class="merchant-square">
+					<img src="img/sears-logo.jpg" alt="">
+				</div>
+				<div class="info" flex>
+					<h1>25% Off Sports Gear</h1>
+					<h2>In-Store Coupon</h2>
+				</div>
+			</div>
+		</div>
+	</template>
+</polymer>
+
+
+ <script>
+  Polymer({
+    handleFavorite: function(event, detail, sender) {
+      var post = sender.templateInstance.model.post;
+      this.$.service.setFavorite(post.uid, post.favorite);
+    }
+  });
+  </script>
