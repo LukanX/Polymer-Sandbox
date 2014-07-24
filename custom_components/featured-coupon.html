@@ -122,21 +122,6 @@
   </style>
 
 	<div id="featured" style="background: url({{background}}) no-repeat; background-size: cover;">
-		<!--<core-icon
-			class="save-outline"
-	    icon="star-outline"
-	    size= "40"
-	    on-tap="{{favoriteTapped}}"> 
-	  </core-icon> -->
-			<div class="save-area">
-				<core-icon
-					id="save"
-			    icon="star"
-			    size= "40"
-			    on-tap="{{favoriteTapped}}">
-			  </core-icon>
-			  <p class="save">save</p>
-			</div>
 		<div class="image-overlay">
 			<div class="scaler"></div>
 		</div>
@@ -155,17 +140,7 @@
 
  <script>
   Polymer('featured-coupon',{
-  	background: "",
-  	publish: {
-      favorite: {
-        value: false,
-        reflect: true
-	      }
-	    },
-    favoriteTapped: function(event, detail, sender) {
-      this.favorite = !this.favorite;
-      this.fire('favorite-tap');
-    }
+  	background: ""
 
   });
   </script>
