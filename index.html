@@ -42,6 +42,11 @@
     overflow-scrolling: touch;
   }
 
+  .bumper{
+  	width: 100%;
+  	height: 64px;
+  }
+
   core-toolbar{
     background: #602D6C;
     color: white;
@@ -141,7 +146,6 @@
   <body unresolved touch-action="auto">
   <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader>
   	<core-toolbar class = "tall">
-  		<div id="headerBG"></div>
   		<div flex self-center class="middle search-container">
 				<core-field>
 				<img src="img/logo.png" alt="" id="logo">
@@ -179,21 +183,8 @@
 	  		<h1>$10 Off $50 Home Goods</h1>
 	  		<h2>In-Store &amp; Online Coupon</h2>
 	  	</coupon-tile>
-	  	<coupon-tile backgroundColor="#ff6502">
-	  		<img src="img/home-depot-logo.png" alt="">
-	  		<h1>$10 Off $50+</h1>
-	  		<h2>In-Store Coupon</h2>
-	  	</coupon-tile>
-	  	<coupon-tile>
-	  		<img src="img/best-buy-logo.png" alt="">
-	  		<h1>15% Off Home &amp; In Store Support</h1>
-	  		<h2>In-Store Coupon</h2>
-	  	</coupon-tile>
-	  	<coupon-tile backgroundColor="#7a0026">
-	  		<img src="img/kohls-logo.png" alt="">
-	  		<h1>$10 Off $50 Home Goods</h1>
-	  		<h2>In-Store &amp; Online Coupon</h2>
-	  	</coupon-tile>
+	  	
+	  	<div class="bumper"></div>
 	  	<div id="bottom-nav">
 	  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
 	        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
