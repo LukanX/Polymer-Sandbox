@@ -78,7 +78,7 @@ Fired when the inputValue of this text input changes and passes validation.
 -->
 <link href="../polymer/polymer.html" rel="import">
 
-<polymer-element name="core-input">
+<polymer-element name="core-input" attributes="inputColor">
 
   <template>
 
@@ -89,7 +89,7 @@ Fired when the inputValue of this text input changes and passes validation.
     </template>
 
     <template if="{{!multiline}}">
-      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" required?="{{required}}" readonly?="{{readonly}}" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-change="{{inputChangeAction}}" on-focus="{{focusAction}}" on-blur="{{blurAction}}">
+      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" required?="{{required}}" readonly?="{{readonly}}" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-change="{{inputChangeAction}}" on-focus="{{focusAction}}" on-blur="{{blurAction}}" style="color: {{inputColor}}">
     </template>
 
   </template>
@@ -97,6 +97,7 @@ Fired when the inputValue of this text input changes and passes validation.
   <script>
 
     Polymer('core-input', {
+      inputColor: "#1c1c1c",
       publish: {
         /**
          * Placeholder text that hints to the user what can be entered in
