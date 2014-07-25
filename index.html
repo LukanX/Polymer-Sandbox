@@ -12,6 +12,8 @@
   <link rel="import" href="bower_components/core-input/core-input.html">
   <link rel="import" href="bower_components/core-field/core-field.html">
   <link rel="import" href="bower_components/core-icons/iconsets/icons.html">
+  <link rel="import" href="bower_components/core-icons/iconsets/maps-icons.html">
+  <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
   <link rel="import" href="bower_components/core-icon/core-icon.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="custom_components/featured-coupon.html">
@@ -106,6 +108,34 @@
   	box-sizing: border-box;
   }
 
+  /* Put in Bottom Nav Element */
+
+  #bottom-nav{
+  	width: 100%;
+  	background-color: white;
+  	position: fixed;
+  	margin: 0;
+  	bottom:0;
+  	left:0;
+  	padding: .5em;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  }
+
+  #bottom-tabs{
+  	color: #602D6C;
+  }
+
+  #bottom-tabs p{
+  	margin:0;
+  	font-size: .75em;
+  }
+
+  #bottom-tabs .icon-space{
+  	text-align: center;
+  }
+
   </style>
 
   <body unresolved touch-action="auto">
@@ -164,6 +194,15 @@
 	  		<h1>$10 Off $50 Home Goods</h1>
 	  		<h2>In-Store &amp; Online Coupon</h2>
 	  	</coupon-tile>
+	  	<div id="bottom-nav">
+	  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
+	        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
+	        <paper-tab name="nearby"><div class="icon-space"><core-icon icon="maps:place"></core-icon><p>nearby</p></div></paper-tab>
+	        <paper-tab name="popular"><div class="icon-space"><core-icon icon="favorite"></core-icon><p>favorites</p></div></paper-tab>
+	        <paper-tab name="saved"><div class="icon-space"><core-icon icon="star"></core-icon><p>saved</p></div></paper-tab>
+	        <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
+	      </paper-tabs>
+	  	</div>
 	  </div>
   </core-scroll-header-panel>
 
@@ -177,7 +216,6 @@
       logoStyle.webkitTransform = logoStyle.transform = 
           'scale(' + scale + ') translateZ(0)';
       logoStyle.opacity = (m - d.y)/m;
-      console.log("m:"+m+" , d.y:"+d.y)
     });
   </script>
  
