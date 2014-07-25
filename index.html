@@ -111,6 +111,7 @@
   <body unresolved touch-action="auto">
   <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader>
   	<core-toolbar class = "tall">
+  		<div id="headerBG"></div>
   		<div flex self-center class="middle search-container">
 				<core-field>
 				<img src="img/logo.png" alt="" id="logo">
@@ -175,6 +176,8 @@
       var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
       logoStyle.webkitTransform = logoStyle.transform = 
           'scale(' + scale + ') translateZ(0)';
+      logoStyle.opacity = (m - d.y)/m;
+      console.log("m:"+m+" , d.y:"+d.y)
     });
   </script>
  
