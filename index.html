@@ -65,7 +65,7 @@
     		<section pane="nearby" class="pane">
     			test
 
-    				<google-map lattitude="43.0450837" longitude="-77.4700816s" zoom="10"></google-map>
+    				<google-map zoom="15"></google-map>
 
     		</section>
 
@@ -297,6 +297,9 @@
   	var panes = document.querySelector('core-selector#pane-selector')
   	var topNav = document.querySelector('core-selector#nav-selector');
   	var map = document.querySelector('google-map');
+
+  	map.latitude = 43.0450837;
+  	map.longitude = -77.4700816;
   	
 
   	bottomNav.addEventListener('core-select', function(detail){
