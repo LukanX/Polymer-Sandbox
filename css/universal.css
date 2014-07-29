@@ -476,6 +476,40 @@ html, body {
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif;
   font-weight: regular; }
 
+.pane {
+  display: none; }
+  .pane.core-selected {
+    display: block; }
+
+.top-nav {
+  display: none; }
+  .top-nav.core-selected {
+    display: block; }
+
+/**** Merchant Logo Stuff ****/
+.merchant-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: .5em;
+  background: #fff;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .merchant-logo.large {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto; }
+  .merchant-logo img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto; }
+
 core-scroll-header-panel {
   height: 100%;
   overflow: auto;
@@ -576,6 +610,116 @@ core-toolbar {
   .merchant-tiles core-icon {
     fill: #ea4545;
     margin-bottom: 6px; }
+
+/* Offers Markup */
+#ourBest {
+  margin: 3px; }
+
+.merchant-info {
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: #f0f0f0 solid 1px; }
+
+.distance, .merchant-name {
+  height: 100%;
+  vertical-align: middle; }
+
+.distance span {
+  color: rgba(0, 0, 0, 0.2); }
+
+.deal-info {
+  background-color: #fcfcfc;
+  border-bottom: 1px #784c82 solid; }
+
+.deal-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  padding: 0 1.5em; }
+
+.deal-info ul li {
+  border-bottom: 1px dashed #ccc;
+  position: relative;
+  padding: .75em 0; }
+
+.deal-info ul li:last-child {
+  border-bottom: none; }
+
+.deal-info p {
+  margin: .25em 0;
+  font-weight: bold;
+  font-size: .75em; }
+
+.deal-info h4 {
+  font-size: 1.25em;
+  font-weight: normal;
+  width: 85%;
+  margin: .25em 0 .5em 0; }
+
+.expiration {
+  color: #e21a1a; }
+
+.type, .number-used {
+  color: rgba(0, 0, 0, 0.5); }
+
+.save {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: .75em;
+  right: 0; }
+
+.save p {
+  margin: 0; }
+
+.help-alert {
+  background: #fffddd;
+  color: #73726e;
+  width: 100%;
+  padding: 1em 0;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid #f0f0f0;
+  font-size: .75em; }
+
+.help-alert .xout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: .5em;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  line-height: 15px;
+  vertical-align: middle; }
+
+.favorites-cta {
+  background: #fff;
+  padding: 2em 2em 11em;
+  text-align: center;
+  background: url(../img/cityscape.png) no-repeat bottom center; }
+
+.button {
+  background: #602D6C;
+  color: white;
+  padding: .75em 1em .75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  border-radius: .25em;
+  width: 90%; }
+
+.sub-nav-pane {
+  display: none; }
+  .sub-nav-pane.core-selected {
+    display: block; }
 
 /* Put in Bottom Nav Element */
 #bottom-nav {
