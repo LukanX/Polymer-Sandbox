@@ -284,6 +284,7 @@
   <script>
 
   	//Tabs functions
+
   	var tabs = document.querySelector('paper-tabs#tabs');
   	var offers = document.querySelector('core-selector#subnav-selector');
 
@@ -294,12 +295,20 @@
   	var bottomNav = document.querySelector('paper-tabs#bottom-tabs')
   	var panes = document.querySelector('core-selector#pane-selector')
   	var topNav = document.querySelector('core-selector#nav-selector');
+  	
 
   	bottomNav.addEventListener('core-select', function(detail){
   		panes.selected = bottomNav.selected;
   		topNav.selected = bottomNav.selected;
+  		map.resize();
   		console.log(topNav.selected)
   	});
+
+  	var map = document.querySelector('google-map');
+
+  	map.addEventListener('google-map-ready', function(){
+  		map.resize();
+  	})
 
     // custom transformation: scale header's title
     var logoStyle = document.querySelector('#logo').style;
@@ -311,6 +320,7 @@
           'scale(' + scale + ') translateZ(0)';
       logoStyle.opacity = (m - d.y)/m;
     });
+
 
     //Fade the help alert when clicking on x
     $('.xout').click(function(){
