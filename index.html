@@ -22,6 +22,7 @@
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="custom_components/featured-coupon.html">
   <link rel="import" href="custom_components/coupon-tile.html">
+  <link rel="import" href="bower_components/google-map/google-map.html">
   <link rel="stylesheet" href="css/universal.css">
 
 	
@@ -62,7 +63,10 @@
 	    	
     	<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
     		<section pane="nearby" class="pane">
-    			<div class="map-container"></div>
+    			test
+
+    				<google-map lattitude="43.0462951" longitude="-77.4687834"></google-map>
+
     		</section>
 
     		<!-- ################## OFFERS ##################-->
