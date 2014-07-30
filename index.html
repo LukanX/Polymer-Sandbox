@@ -374,6 +374,7 @@
     $('.close-location-modal').click(function(){
     	$('#location-modal').fadeOut(500);
     	$('core-selector').removeClass('blur');
+    	map.resize();
     	gpsEnabled = true;
     });
 
