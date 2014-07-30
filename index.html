@@ -63,9 +63,10 @@
 	    	
     	<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
     		<section pane="nearby" class="pane">
-
+    			<div class="map-container" layout vertical>
     				<google-map zoom="15"></google-map>
-
+    				<div class="bumper"></div>
+    			</div>
     		</section>
 
     		<!-- ################## OFFERS ##################-->
@@ -259,22 +260,22 @@
 					  		</div>
 				  		</div>
 				  	</div>
+				  	<div class="bumper"></div>
 				  </core-selector>
 				</section>
 			</core-selector>
 
 			
 				
-		  	<div class="bumper"></div>
-		  	<div id="bottom-nav">
-		  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
-		        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
-		        <paper-tab name="nearby"><div class="icon-space"><core-icon icon="maps:place"></core-icon><p>nearby</p></div></paper-tab>
-		        <paper-tab name="favorites"><div class="icon-space"><core-icon icon="favorite"></core-icon><p>favorites</p></div></paper-tab>
-		        <paper-tab name="saved"><div class="icon-space"><core-icon icon="star"></core-icon><p>saved</p></div></paper-tab>
-		        <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
-		      </paper-tabs>
-		  	</div>
+	  	<div id="bottom-nav">
+	  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
+	        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
+	        <paper-tab name="nearby"><div class="icon-space"><core-icon icon="maps:place"></core-icon><p>nearby</p></div></paper-tab>
+	        <paper-tab name="favorites"><div class="icon-space"><core-icon icon="favorite"></core-icon><p>favorites</p></div></paper-tab>
+	        <paper-tab name="saved"><div class="icon-space"><core-icon icon="star"></core-icon><p>saved</p></div></paper-tab>
+	        <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
+	      </paper-tabs>
+	  	</div>
 		
 	  </core-scroll-header-panel>
 

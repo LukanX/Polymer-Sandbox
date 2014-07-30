@@ -471,15 +471,21 @@ br.clear {
     margin-left: auto; } }
 html, body {
   height: 100%;
+  width: 100%;
   margin: 0;
-  background-color: #E5E5E5;
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif;
   font-weight: regular; }
+
+#pane-selector {
+  height: 100%;
+  width: 100%; }
 
 .pane {
   display: none; }
   .pane.core-selected {
-    display: block; }
+    display: block;
+    height: 100%;
+    width: 100%; }
 
 .top-nav {
   display: none; }
@@ -576,10 +582,14 @@ core-toolbar {
 
 .container {
   width: 100%;
+  height: 100%;
   background: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+  .container:after {
+    width: 100%;
+    height: 100%; }
 
 .merchant-tiles {
   text-align: center;
@@ -721,10 +731,13 @@ core-toolbar {
   .sub-nav-pane.core-selected {
     display: block; }
 
+.map-container {
+  height: 100%;
+  width: 100%; }
+
 google-map {
   display: block;
-  width: 100%;
-  height: 500px;
+  height: 100%;
   background: red; }
 
 /* Put in Bottom Nav Element */
