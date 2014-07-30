@@ -798,8 +798,7 @@ p.smaller {
     margin-bottom: 64px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    position: relative; }
+    box-sizing: content-box; }
 
 .subnav-selector {
   width: 100%; }
@@ -808,8 +807,7 @@ p.smaller {
     margin-bottom: 64px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    position: relative; }
+    box-sizing: content-box; }
 
 .map-container {
   height: 100%;
