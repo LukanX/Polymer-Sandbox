@@ -590,8 +590,7 @@ core-scroll-header-panel, core-header-panel {
   -o-overflow-scrolling: touch;
   overflow-scrolling: touch; }
   core-scroll-header-panel.core-selected, core-header-panel.core-selected {
-    display: block;
-    left: 0; }
+    display: block; }
 
 .bumper {
   width: 100%;
