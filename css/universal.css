@@ -579,7 +579,8 @@ core-header-panel img {
   transform: scale(0.5); }
 
 core-scroll-header-panel, core-header-panel {
-  visibility: hidden;
+  display: none;
+  transition: .5s ease;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -587,11 +588,9 @@ core-scroll-header-panel, core-header-panel {
   -moz-overflow-scrolling: touch;
   -ms-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-  position: absolute;
-  left: -1000px; }
+  overflow-scrolling: touch; }
   core-scroll-header-panel.core-selected, core-header-panel.core-selected {
-    visibility: visible;
+    display: block;
     left: 0; }
 
 .bumper {
