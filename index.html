@@ -341,7 +341,7 @@
   		if (panes.selected == 'nearby'){
   			setTimeout(function(){
   				map.resize();
-  			}, .1);
+  			}, .5);
   			if(gpsEnabled == false){
   				$('#location-modal').fadeIn(500);
   				$('core-selector').addClass('blur');
@@ -374,7 +374,6 @@
     	$('#location-modal').fadeOut(500);
     	$('core-selector').removeClass('blur');
     	gpsEnabled = true;
-    	map.resize();
     });
 
   </script>
