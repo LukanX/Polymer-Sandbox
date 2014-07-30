@@ -573,12 +573,11 @@ core-scroll-header-panel {
   -ms-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
   overflow-scrolling: touch;
-  position: relative;
-  margin-top: -20px; }
+  position: relative; }
 
 .bumper {
   width: 100%;
-  height: 44px; }
+  height: 64px; }
 
 core-toolbar {
   background: #602D6C;
