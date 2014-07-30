@@ -56,12 +56,12 @@
 	  		</div>
 	    	<div class ="bottom fit" id="navbar">
 	    		<core-selector id="nav-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
-			      <paper-tabs id="tabs" class="top-nav" valueattr="name" selected="ourBest" self-end noink="true" pane="offers">
+			      <paper-tabs class="top-nav" valueattr="name" selected="ourBest" self-end noink="true" pane="offers">
 			        <paper-tab id="ourBest" name="ourBest">Our Best</paper-tab>
 			        <paper-tab id="justForYou" name="justForYou">Just for You</paper-tab>
 			        <paper-tab id="popular" name="popular">Popular</paper-tab>
 			      </paper-tabs>
-			      <paper-tabs id="tabs" class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
+			      <paper-tabs class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
 			        <paper-tab id="ourBest" name="stores">Stores</paper-tab>
 			        <paper-tab id="justForYou" name="malls">Malls</paper-tab>
 			        <paper-tab id="popular" name="restaurants">Restaurants</paper-tab>
@@ -83,7 +83,7 @@
 
     		<!-- ################## OFFERS ##################-->
 	    	<section pane="offers" class="pane">
-		    	<core-selector id="subnav-selector" valueattr="id" selected="ourBest" target = "{{$.navbar}}" itemSelector="paper-tabs#tabs">
+		    	<core-selector class="subnav-selector" valueattr="id" selected="ourBest" target = "{{$.navbar}}" itemSelector="paper-tabs.topNav">
 		    	<!-- ################## OUR BEST ##################-->
 			    	<div id="ourBest" class="sub-nav-pane">
 				    	<div class="help-alert">Today's best offers, hand-picked by our editors! <span class="xout">x</span></div>
@@ -298,11 +298,12 @@
 
   	//Tabs functions
 
-  	var tabs = document.querySelector('paper-tabs#tabs');
-  	var offers = document.querySelector('core-selector#subnav-selector');
+  	var tabs = document.querySelector('.top-nav');
+  	var offers = document.querySelector('core-selector.subnav-selector');
 
   	tabs.addEventListener('core-select', function(detail){
   		offers.selected = tabs.selected;
+  		console.log( "Offers:"+offers.selected+" Tabs:"+tabs.selected);
   	});
 
   	var bottomNav = document.querySelector('paper-tabs#bottom-tabs')
@@ -315,6 +316,7 @@
   	bottomNav.addEventListener('core-select', function(detail){
   		panes.selected = bottomNav.selected;
   		topNav.selected = bottomNav.selected;
+  		console.log("Pane:"+panes.selected+ " topNav:"+topNav.selected+" bottomNav:"+bottomNav.selected + " Tab:" +tabs.selected);
   		if (panes.selected == 'nearby'){
   			setTimeout(function(){
   				map.resize();
