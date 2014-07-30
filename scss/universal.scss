@@ -14,7 +14,7 @@ html,body {
   height: 100%;
   width: 100%;
   margin: 0;
-  background-color: #602D6C;
+  background-color: #fff;
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif; font-weight: regular;
 }
 
@@ -370,10 +370,9 @@ core-toolbar{
 	}
 
 	.favorites-cta{
-		background: #fff;
 		padding: 2em 2em 11em;
 		text-align: center;
-		background: url(../img/cityscape.png) no-repeat bottom center;
+		background: url(../img/cityscape.png) no-repeat bottom center #fff;
 	}
 
 	.button{
@@ -401,6 +400,7 @@ core-toolbar{
 			-webkit-box-sizing: content-box;
 			-moz-box-sizing: content-box;
 			box-sizing: content-box;
+			position: relative;
 		}
 	}
 
@@ -413,6 +413,7 @@ core-toolbar{
 			-webkit-box-sizing: content-box;
 			-moz-box-sizing: content-box;
 			box-sizing: content-box;
+			position: relative;
 		}
 	}
 
