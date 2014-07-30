@@ -476,6 +476,11 @@ html, body {
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif;
   font-weight: regular; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 #pane-selector {
   height: 100%;
   width: 100%; }
