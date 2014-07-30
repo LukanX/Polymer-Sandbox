@@ -73,13 +73,12 @@
 		      </div>
 		    </core-toolbar>
 		    <div class="content container" layout vertical>
-		    	<core-selector id = "nearby-selector" class="subnav-selector" valueattr="id" selected="stores" itemSelector="paper-tabs#nearby-nav">
-		    			<div id="stores" class="sub-nav-pane">
-			    			<div class="map-container" layout vertical>
+		    	<core-selector id = "nearby-selector" class="subnav-selector map" valueattr="id" selected="stores" itemSelector="paper-tabs#nearby-nav">
+		    			<div id="stores" class="sub-nav-pane map">
+			    			<div class="map-container" layout vertical center>
 			    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12">
 			    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
 			    				</google-map>
-			    				<div class="bumper"></div>
 			    			</div>
 			    		</div>
 			    	</core-selector>
