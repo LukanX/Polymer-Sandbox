@@ -329,7 +329,9 @@
   	nearbyTabs.addEventListener('core-select', function(detail){
   		nearby.selected = nearbyTabs.selected;
   		console.log( "nearby:"+nearby.selected+" Tabs:"+nearbyTabs.selected);
-  		map.resize();
+  		setTimeout(function(){
+  				map.resize();
+  			}, .1);
   	});
 
   	var bottomNav = document.querySelector('paper-tabs#bottom-tabs')
@@ -340,7 +342,9 @@
 
   	bottomNav.addEventListener('core-select', function(detail){
   		panes.selected = bottomNav.selected;
-  		map.resize();
+  		setTimeout(function(){
+  				map.resize();
+  			}, .1);
   		if (panes.selected == 'nearby' && gpsEnabled == false){
   				$('#location-modal').fadeIn(500);
   				$('core-selector').addClass('blur');
@@ -371,7 +375,6 @@
     $('.close-location-modal').click(function(){
     	$('#location-modal').fadeOut(500);
     	$('core-selector').removeClass('blur');
-    	map.resize();
     	gpsEnabled = true;
     });
 
