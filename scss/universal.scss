@@ -18,6 +18,10 @@ html,body {
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif; font-weight: regular;
 }
 
+body{
+	position: relative;
+}
+
 *{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -57,22 +61,23 @@ a{
 	padding-bottom: 20px;
 }
 
+#location-modal{
+	display: none;
+}
+
 .modal{
 	width: 90%;
-	padding: .75em;
+	padding: 1em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background: url(../img/goldhills.png) no-repeat bottom center #fff;
 	-webkit-background-size: 100%;
 	background-size: 100%;
-	margin: 0 auto;
+	margin: 50% auto 0;
 	position: relative;
 	text-align: center;
 	border-radius: .25em;
-	p{
-		margin: .5em;
-	}
 	.button{
 		font-size: .75em;
 		text-align: center;
@@ -126,6 +131,7 @@ a{
 }
 core-scroll-header-panel{
   height: 100%;
+  width: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -moz-overflow-scrolling: touch;
@@ -133,6 +139,7 @@ core-scroll-header-panel{
   -o-overflow-scrolling: touch;
   overflow-scrolling: touch;
   position: relative;
+  transition: .5s;
 }
 
 .bumper{

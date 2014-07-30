@@ -35,6 +35,16 @@
   </style>
 
   <body unresolved touch-action="auto">
+  	<div id="location-modal" class="modal-bg">
+			<div class="modal">
+				<h3>Thar's gold in them there hills, friend!</h3>
+				<p>Enable Nearby Offer Notifications to find savings on the go!</p>
+				<div class="button full-button close-location-modal">get nearby offer notifications</div>
+				<p class = "smaller"><a href="#">NO THANKS</a></p>
+				<p class = "grey smaller">view privacy policy</p>
+				<div class="x-out "><img src="img/x-out.png" alt=""></div>
+			</div>
+		</div>
 	  <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader>
 	  	<core-toolbar class = "tall">
 	  		<div flex self-center class="middle search-container">
@@ -63,17 +73,7 @@
 	    	
     	<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
     		<section pane="nearby" class="pane">
-    			<div id="location-modal" class="modal-bg" layout horizontal center>
-    				<div class="modal">
-    					<h3>Thar's gold in them there hills, friend!</h3>
-    					<p>Enable Nearby Offer Notifications to find savings on the go!</p>
-    					<div class="button full-button close-location-modal">get nearby offer notifications</div>
-    					<p class = "smaller"><a href="#">NO THANKS</a></p>
-    					<p class = "grey smaller">view privacy policy</p>
-    					<div class="x-out "><img src="img/x-out.png" alt=""></div>
-    				</div>
-    			</div>
-    			<div class="map-container blur" layout vertical>
+    			<div class="map-container" layout vertical>
     				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12">
     					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
     				</google-map>
@@ -309,6 +309,7 @@
   	var panes = document.querySelector('core-selector#pane-selector')
   	var topNav = document.querySelector('core-selector#nav-selector');
   	var map = document.querySelector('google-map');
+  	var gpsEnabled = false;
   	
 
   	bottomNav.addEventListener('core-select', function(detail){
@@ -318,6 +319,10 @@
   			setTimeout(function(){
   				map.resize();
   			}, .1);
+  			if(gpsEnabled == false){
+  				$('#location-modal').fadeIn(500);
+  				$('core-scroll-header-panel').addClass('blur');
+  			}
   		}
   	});
 
@@ -344,7 +349,8 @@
 
     $('.close-location-modal').click(function(){
     	$('#location-modal').fadeOut(500);
-    	$('.map-container').removeClass('blur');
+    	$('core-scroll-header-panel').removeClass('blur');
+    	gpsEnabled = true;
     });
 
   </script>
