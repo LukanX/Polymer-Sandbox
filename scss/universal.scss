@@ -14,7 +14,7 @@ html,body {
   height: 100%;
   width: 100%;
   margin: 0;
-  //background-color: #E5E5E5;
+  background-color: #602D6C;
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif; font-weight: regular;
 }
 
@@ -31,6 +31,7 @@ body{
 #pane-selector{
 	height: 100%;
 	width: 100%;
+	color: #602D6C;
 }
 
 a{
@@ -96,13 +97,6 @@ a{
 	}
 }
 
-.top-nav{
-	display: none;
-	&.core-selected{
-		display: block;
-	}
-}
-
 /**** Merchant Logo Stuff ****/
 .merchant-logo{
 	width: 60px;
@@ -129,7 +123,13 @@ a{
 		margin: auto;
 	}
 }
-core-scroll-header-panel{
+
+core-header-panel{
+
+}
+core-scroll-header-panel, core-header-panel{
+  visibility: hidden;
+  transition: .5s ease;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -138,8 +138,12 @@ core-scroll-header-panel{
   -ms-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
   overflow-scrolling: touch;
-  position: relative;
-  transition: .5s;
+  position: absolute;
+  left: -1000px;
+  &.core-selected{
+  	visibility: visible;
+  	left: 0;
+  }
 }
 
 .bumper{
@@ -152,7 +156,7 @@ core-toolbar{
   color: white;
 }
 
-#navbar{
+.navbar{
 	background: white;
 	color: #602D6C;
 }
@@ -385,7 +389,14 @@ core-toolbar{
 		display: none;
 		&.core-selected{
 			display: block;
+			height: 100%;
+			width: 100%;
 		}
+	}
+
+	.subnav-selector{
+		height: 100%;
+		width: 100%;
 	}
 
 	.map-container{
@@ -416,7 +427,7 @@ core-toolbar{
 	margin: 0;
 	bottom:0;
 	left:0;
-	z-index: 1000;
+	z-index: 100;
 	padding: .5em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

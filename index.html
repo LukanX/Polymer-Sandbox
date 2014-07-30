@@ -45,251 +45,267 @@
 				<div class="x-out "><img src="img/x-out.png" alt=""></div>
 			</div>
 		</div>
-	  <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader>
-	  	<core-toolbar class = "tall">
-	  		<div flex self-center class="middle search-container">
-					<core-field>
-					<img src="img/logo.png" alt="" id="logo">
-					<core-icon icon="search"></core-icon>
-					<core-input flex placeholder="search" class="search-bar" inputColor="#fff"></core-input>
-				</core-field>
-	  		</div>
-	    	<div class ="bottom fit" id="navbar">
-	    		<core-selector id="nav-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
-			      <paper-tabs class="top-nav" valueattr="name" selected="ourBest" self-end noink="true" pane="offers">
+
+		<div id="bottom-nav">
+  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
+        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
+        <paper-tab name="nearby"><div class="icon-space"><core-icon icon="maps:place"></core-icon><p>nearby</p></div></paper-tab>
+        <paper-tab name="favorites"><div class="icon-space"><core-icon icon="favorite"></core-icon><p>favorites</p></div></paper-tab>
+        <paper-tab name="saved"><div class="icon-space"><core-icon icon="star"></core-icon><p>saved</p></div></paper-tab>
+        <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
+      </paper-tabs>
+  	</div>
+		
+		<!-- ########### NEARBY ########-->
+		<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
+		  <core-header-panel pane="nearby">
+		  	<core-toolbar class = "medium-tall">
+		  		<div flex self-center>
+						<img src="img/logo.png" alt="" id="small-logo">
+		  		</div>
+		    	<div class ="bottom fit navbar" id="nearby-navbar">
+			      <paper-tabs id="nearby-nav" class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
+			        <paper-tab id="stores" name="stores">Stores</paper-tab>
+			        <paper-tab id="malls" name="malls">Malls</paper-tab>
+			        <paper-tab id="restaurants" name="restaurants">Restaurants</paper-tab>
+			      </paper-tabs>
+		      </div>
+		    </core-toolbar>
+		    <div class="content container" layout vertical>
+		    	<core-selector id = "nearby-selector" class="subnav-selector" valueattr="id" selected="stores" itemSelector="paper-tabs#nearby-nav">
+		    			<div id="stores" class="sub-nav-pane">
+			    			<div class="map-container" layout vertical>
+			    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12">
+			    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
+			    				</google-map>
+			    				<div class="bumper"></div>
+			    			</div>
+			    		</div>
+			    	</core-selector>
+		    </div>
+		  </core-header-panel>
+
+		  <!-- ############# OFFERS ######### -->
+
+		  <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader pane="offers">
+		  	<core-toolbar class = "tall">
+		  		<div flex self-center class="middle search-container">
+						<core-field>
+						<img src="img/logo.png" alt="" id="logo">
+						<core-icon icon="search"></core-icon>
+						<core-input flex placeholder="search" class="search-bar" inputColor="#fff"></core-input>
+					</core-field>
+		  		</div>
+		    	<div class ="bottom fit navbar">
+			      <paper-tabs id="offers-nav" class="top-nav" valueattr="name" selected="ourBest" self-end noink="true" pane="offers">
 			        <paper-tab id="ourBest" name="ourBest">Our Best</paper-tab>
 			        <paper-tab id="justForYou" name="justForYou">Just for You</paper-tab>
 			        <paper-tab id="popular" name="popular">Popular</paper-tab>
 			      </paper-tabs>
-			      <paper-tabs class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
-			        <paper-tab id="ourBest" name="stores">Stores</paper-tab>
-			        <paper-tab id="justForYou" name="malls">Malls</paper-tab>
-			        <paper-tab id="popular" name="restaurants">Restaurants</paper-tab>
-			      </paper-tabs>
-			    </core-selector>
-	      </div>
-	    </core-toolbar>
-	    <div class="content container" layout vertical>
-	    	
-    	<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
-    		<section pane="nearby" class="pane">
-    			<div class="map-container" layout vertical>
-    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12">
-    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
-    				</google-map>
-    				<div class="bumper"></div>
-    			</div>
-    		</section>
+		      </div>
+		    </core-toolbar>
+		    <div class="content container" layout vertical>
 
-    		<!-- ################## OFFERS ##################-->
-	    	<section pane="offers" class="pane">
-		    	<core-selector class="subnav-selector" valueattr="id" selected="ourBest" target = "{{$.navbar}}" itemSelector="paper-tabs.topNav">
-		    	<!-- ################## OUR BEST ##################-->
-			    	<div id="ourBest" class="sub-nav-pane">
-				    	<div class="help-alert">Today's best offers, hand-picked by our editors! <span class="xout">x</span></div>
-					  	<featured-coupon background="img/featured.jpg">
-					  		<img src="img/sears-logo.jpg" alt="">
-					  		<h1>25% Off Sports Gear</h1>
-					  		<h2>In-Store Coupon</h2>
-					  	</featured-coupon>
-					  	<coupon-tile backgroundColor="#ff6502">
-					  		<img src="img/home-depot-logo.png" alt="">
-					  		<h1>$10 Off $50+</h1>
-					  		<h2>In-Store Coupon</h2>
-					  	</coupon-tile>
-					  	<coupon-tile>
-					  		<img src="img/best-buy-logo.png" alt="">
-					  		<h1>15% Off Home &amp; In Store Support</h1>
-					  		<h2>In-Store Coupon</h2>
-					  	</coupon-tile>
-					  	<coupon-tile backgroundColor="#7a0026">
-					  		<img src="img/kohls-logo.png" alt="">
-					  		<h1>$10 Off $50 Home Goods</h1>
-					  		<h2>In-Store &amp; Online Coupon</h2>
-					  	</coupon-tile>
-					  	<div class="favorites-cta" layout vertical center>
-				  			<h2>Looking for your Favorite Stores?</h2>
-				  			<div class="button full-button">view favorite stores</div>
-				  		</div>
-				  	</div>
+	    		<!-- ############### MAP SECTION ###############
+	    		<section pane="nearby" class="pane">
+	    			
+	    		</section>-->
 
-				  	
-						<!-- ################## Just For You ################## -->
-				  	<div id="justForYou" class="sub-nav-pane">
-				  		<div class="help-alert">Top offers from your favorite stores! <span class="xout">x</span></div>
-				  		<div class="merchant-coupon-area">
-				  			<div class="merchant-info" horizontal layout center>
-					  			<div class="merchant-logo">
-					  				<img src="img/best-buy-logo.png" alt="">
-					  			</div>
-					  			<div class="merchant-name" flex>Best Buy</div>
-					  			<div class="distance">1.5m <span>&#10095;</span></div>
+	    		<!-- ################## OFFERS ##################-->
+			    	<core-selector id="offers-selector" class="subnav-selector" valueattr="id" selected="ourBest" itemSelector="paper-tabs#offers-nav">
+			    	<!-- ################## OUR BEST ##################-->
+				    	<div id="ourBest" class="sub-nav-pane">
+					    	<div class="help-alert">Today's best offers, hand-picked by our editors! <span class="xout">x</span></div>
+						  	<featured-coupon background="img/featured.jpg">
+						  		<img src="img/sears-logo.jpg" alt="">
+						  		<h1>25% Off Sports Gear</h1>
+						  		<h2>In-Store Coupon</h2>
+						  	</featured-coupon>
+						  	<coupon-tile backgroundColor="#ff6502">
+						  		<img src="img/home-depot-logo.png" alt="">
+						  		<h1>$10 Off $50+</h1>
+						  		<h2>In-Store Coupon</h2>
+						  	</coupon-tile>
+						  	<coupon-tile>
+						  		<img src="img/best-buy-logo.png" alt="">
+						  		<h1>15% Off Home &amp; In Store Support</h1>
+						  		<h2>In-Store Coupon</h2>
+						  	</coupon-tile>
+						  	<coupon-tile backgroundColor="#7a0026">
+						  		<img src="img/kohls-logo.png" alt="">
+						  		<h1>$10 Off $50 Home Goods</h1>
+						  		<h2>In-Store &amp; Online Coupon</h2>
+						  	</coupon-tile>
+						  	<div class="favorites-cta" layout vertical center>
+					  			<h2>Looking for your Favorite Stores?</h2>
+					  			<div class="button full-button">view favorite stores</div>
 					  		</div>
-					  		<div class="deal-info">
-					  			<ul>
-					  				<li>
-					  					<p class="expiration">Ends August 14</p>
-						  				<h4>Up To 60% Off - Cyber Monday In July</h4>
-						  				<p class="type">Digital Flyer</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-						  			<li>
-					  					<p class="expiration">Ends August 2</p>
-						  				<h4>15% Off In Home &amp; Store Support</h4>
-						  				<p class="type">In-Store</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-					  			</ul>
-					  		</div>
-				  		</div>
+					  	</div>
 
-				  		<div class="merchant-coupon-area">
-				  			<div class="merchant-info" horizontal layout center>
-					  			<div class="merchant-logo">
-					  				<img src="img/kohls-logo.png" alt="">
-					  			</div>
-					  			<div class="merchant-name" flex>Kohl's</div>
-					  			<div class="distance">1.5m <span>&#10095;</span></div>
+					  	
+							<!-- ################## Just For You ################## -->
+					  	<div id="justForYou" class="sub-nav-pane">
+					  		<div class="help-alert">Top offers from your favorite stores! <span class="xout">x</span></div>
+					  		<div class="merchant-coupon-area">
+					  			<div class="merchant-info" horizontal layout center>
+						  			<div class="merchant-logo">
+						  				<img src="img/best-buy-logo.png" alt="">
+						  			</div>
+						  			<div class="merchant-name" flex>Best Buy</div>
+						  			<div class="distance">1.5m <span>&#10095;</span></div>
+						  		</div>
+						  		<div class="deal-info">
+						  			<ul>
+						  				<li>
+						  					<p class="expiration">Ends August 14</p>
+							  				<h4>Up To 60% Off - Cyber Monday In July</h4>
+							  				<p class="type">Digital Flyer</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+							  			<li>
+						  					<p class="expiration">Ends August 2</p>
+							  				<h4>15% Off In Home &amp; Store Support</h4>
+							  				<p class="type">In-Store</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+						  			</ul>
+						  		</div>
 					  		</div>
-					  		<div class="deal-info">
-					  			<ul>
-					  				<li>
-					  					<p class="expiration">Ends August 2</p>
-						  				<h4>$10 Off $30+ On Young Mens Apparel Purchase</h4>
-						  				<p class="type">In-Store &amp; Online</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-						  			<li>
-					  					<p class="expiration">Ends August 30</p>
-						  				<h4>$10 Off $50 Home Goods</h4>
-						  				<p class="type">In-Store</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-					  			</ul>
-					  		</div>
-				  		</div>
 
-			  		<div class="merchant-tiles">
-			  			<h2>Get Deals from Stores You <core-icon icon="favorite" size="32"></core-icon></h2>
-			  			<ul layout horizontal>
-				  			<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/amazon.com-logo.png" alt=""></div>
-				  				<p>Amazon</p>
-				  			</a></li>
-				  			<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/m/store.starbucks.com-coupons.jpg" alt=""></div>
-				  				<p>Starbucks</p>
-				  			</a></li>
-				  			<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/m/sephora.com-coupons.jpg" alt=""></div>
-				  				<p>Sephora</p>
-				  			</a></li>
-				  		</ul>
-				  		<ul layout horizontal>
-				  				<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/hm.com-logo.png" alt=""></div>
-				  				<p>H&amp;M</p>
-				  			</a></li>
-				  			<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/macys.com-logo.png" alt=""></div>
-				  				<p>Macy's</p>
-				  			</a></li>
-				  			<li><a>
-				  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/l/audible.com-coupons.jpg" alt=""></div>
-				  				<p>Audible</p>
-				  			</a></li>
-				  		</ul>
-				  	</div>
-				  </div>
+					  		<div class="merchant-coupon-area">
+					  			<div class="merchant-info" horizontal layout center>
+						  			<div class="merchant-logo">
+						  				<img src="img/kohls-logo.png" alt="">
+						  			</div>
+						  			<div class="merchant-name" flex>Kohl's</div>
+						  			<div class="distance">1.5m <span>&#10095;</span></div>
+						  		</div>
+						  		<div class="deal-info">
+						  			<ul>
+						  				<li>
+						  					<p class="expiration">Ends August 2</p>
+							  				<h4>$10 Off $30+ On Young Mens Apparel Purchase</h4>
+							  				<p class="type">In-Store &amp; Online</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+							  			<li>
+						  					<p class="expiration">Ends August 30</p>
+							  				<h4>$10 Off $50 Home Goods</h4>
+							  				<p class="type">In-Store</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+						  			</ul>
+						  		</div>
+					  		</div>
 
-					<!-- ################## Most Popular ################## -->
-				  	<div id="popular" class="sub-nav-pane">
-				  		<div class="help-alert">The most-used offers of the day. <span class="xout">x</span></div>
+				  		<div class="merchant-tiles">
+				  			<h2>Get Deals from Stores You <core-icon icon="favorite" size="32"></core-icon></h2>
+				  			<ul layout horizontal>
+					  			<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/amazon.com-logo.png" alt=""></div>
+					  				<p>Amazon</p>
+					  			</a></li>
+					  			<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/m/store.starbucks.com-coupons.jpg" alt=""></div>
+					  				<p>Starbucks</p>
+					  			</a></li>
+					  			<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/m/sephora.com-coupons.jpg" alt=""></div>
+					  				<p>Sephora</p>
+					  			</a></li>
+					  		</ul>
+					  		<ul layout horizontal>
+					  				<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/hm.com-logo.png" alt=""></div>
+					  				<p>H&amp;M</p>
+					  			</a></li>
+					  			<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/mobile/macys.com-logo.png" alt=""></div>
+					  				<p>Macy's</p>
+					  			</a></li>
+					  			<li><a>
+					  				<div class="merchant-logo"><img src="http://o.rmncdn.com/thumbs/logos/l/audible.com-coupons.jpg" alt=""></div>
+					  				<p>Audible</p>
+					  			</a></li>
+					  		</ul>
+					  	</div>
+					  </div>
 
-				  		<div class="merchant-coupon-area">
-				  			<div id = "kohls" class="merchant-info" horizontal layout center>
-					  			<div class="merchant-logo">
-					  				<img src="img/kohls-logo.png" alt="">
-					  			</div>
-					  			<div class="merchant-name" flex>Kohl's</div>
-					  			<div class="distance">1.5m <span>&#10095;</span></div>
-					  		</div>
-					  		<div class="deal-info">
-					  			<ul>
-					  				<li>
-					  					<p class="number-used">4,726 People Used Today</p>
-						  				<h4>$10 Off $30+ On Young Mens Apparel Purchase</h4>
-						  				<p class="type">In-Store &amp; Online</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-						  			<li>
-					  					<p class="number-used">1,648 People Used Today</p>
-						  				<h4>$10 Off $50 Home Goods</h4>
-						  				<p class="type">In-Store</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-					  			</ul>
-					  		</div>
-				  		</div>
+						<!-- ################## Most Popular ################## -->
+					  	<div id="popular" class="sub-nav-pane">
+					  		<div class="help-alert">The most-used offers of the day. <span class="xout">x</span></div>
 
-				  		<div class="merchant-coupon-area">
-				  			<div class="merchant-info" horizontal layout center>
-					  			<div class="merchant-logo">
-					  				<img src="http://o.rmncdn.com/thumbs/ideas/products/1406240887903_s2.jpg" alt="">
-					  			</div>
-					  			<div class="merchant-name" flex>American Eagle Outfitters</div>
-					  			<div class="distance">1.8m <span>&#10095;</span></div>
+					  		<div class="merchant-coupon-area">
+					  			<div id = "kohls" class="merchant-info" horizontal layout center>
+						  			<div class="merchant-logo">
+						  				<img src="img/kohls-logo.png" alt="">
+						  			</div>
+						  			<div class="merchant-name" flex>Kohl's</div>
+						  			<div class="distance">1.5m <span>&#10095;</span></div>
+						  		</div>
+						  		<div class="deal-info">
+						  			<ul>
+						  				<li>
+						  					<p class="number-used">4,726 People Used Today</p>
+							  				<h4>$10 Off $30+ On Young Mens Apparel Purchase</h4>
+							  				<p class="type">In-Store &amp; Online</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+							  			<li>
+						  					<p class="number-used">1,648 People Used Today</p>
+							  				<h4>$10 Off $50 Home Goods</h4>
+							  				<p class="type">In-Store</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+						  			</ul>
+						  		</div>
 					  		</div>
-					  		<div class="deal-info">
-					  			<ul>
-					  				<li>
-					  					<p class="number-used">2,373 People Used Today</p>
-						  				<h4>$10 off all AEO Jeans + Free Shipping</h4>
-						  				<p class="type">Digital Flyer</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-					  			</ul>
-					  		</div>
-				  		</div>
 
-				  		<div class="merchant-coupon-area">
-				  			<div class="merchant-info" horizontal layout center>
-					  			<div class="merchant-logo">
-					  				<img src="http://o.rmncdn.com/thumbs/logos/l/sportsauthority.com-coupons.jpg" alt="">
-					  			</div>
-					  			<div class="merchant-name" flex>Sports Authority</div>
-					  			<div class="distance">3.1m <span>&#10095;</span></div>
+					  		<div class="merchant-coupon-area">
+					  			<div class="merchant-info" horizontal layout center>
+						  			<div class="merchant-logo">
+						  				<img src="http://o.rmncdn.com/thumbs/ideas/products/1406240887903_s2.jpg" alt="">
+						  			</div>
+						  			<div class="merchant-name" flex>American Eagle Outfitters</div>
+						  			<div class="distance">1.8m <span>&#10095;</span></div>
+						  		</div>
+						  		<div class="deal-info">
+						  			<ul>
+						  				<li>
+						  					<p class="number-used">2,373 People Used Today</p>
+							  				<h4>$10 off all AEO Jeans + Free Shipping</h4>
+							  				<p class="type">Digital Flyer</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+						  			</ul>
+						  		</div>
 					  		</div>
-					  		<div class="deal-info">
-					  			<ul>
-					  				<li>
-					  					<p class="number-used">1,722 People Used Today</p>
-						  				<h4>$50 Off $250+ On Select Items In Store &amp; Online</h4>
-						  				<p class="type">In-Store &amp; Online</p>
-						  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
-						  			</li>
-					  			</ul>
-					  		</div>
-				  		</div>
-				  	</div>
-				  	<div class="bumper"></div>
-				  </core-selector>
-				</section>
-			</core-selector>
 
-			
-				
-	  	<div id="bottom-nav">
-	  		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
-	        <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
-	        <paper-tab name="nearby"><div class="icon-space"><core-icon icon="maps:place"></core-icon><p>nearby</p></div></paper-tab>
-	        <paper-tab name="favorites"><div class="icon-space"><core-icon icon="favorite"></core-icon><p>favorites</p></div></paper-tab>
-	        <paper-tab name="saved"><div class="icon-space"><core-icon icon="star"></core-icon><p>saved</p></div></paper-tab>
-	        <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
-	      </paper-tabs>
-	  	</div>
-		
-	  </core-scroll-header-panel>
+					  		<div class="merchant-coupon-area">
+					  			<div class="merchant-info" horizontal layout center>
+						  			<div class="merchant-logo">
+						  				<img src="http://o.rmncdn.com/thumbs/logos/l/sportsauthority.com-coupons.jpg" alt="">
+						  			</div>
+						  			<div class="merchant-name" flex>Sports Authority</div>
+						  			<div class="distance">3.1m <span>&#10095;</span></div>
+						  		</div>
+						  		<div class="deal-info">
+						  			<ul>
+						  				<li>
+						  					<p class="number-used">1,722 People Used Today</p>
+							  				<h4>$50 Off $250+ On Select Items In Store &amp; Online</h4>
+							  				<p class="type">In-Store &amp; Online</p>
+							  				<div class="save"><core-icon icon="star-outline" size="30"><p>save</p></div>
+							  			</li>
+						  			</ul>
+						  		</div>
+					  		</div>
+					  	</div>
+					  	<div class="bumper"></div>
+					  </core-selector>
+					
+		  </core-scroll-header-panel>
+	  </core-selector>
 
 
 		
@@ -298,32 +314,37 @@
 
   	//Tabs functions
 
-  	var tabs = document.querySelector('.top-nav');
-  	var offers = document.querySelector('core-selector.subnav-selector');
+  	var offersTabs = document.querySelector('#offers-nav');
+  	var offers = document.querySelector('core-selector#offers-selector');
 
-  	tabs.addEventListener('core-select', function(detail){
-  		offers.selected = tabs.selected;
-  		console.log( "Offers:"+offers.selected+" Tabs:"+tabs.selected);
+  	offersTabs.addEventListener('core-select', function(detail){
+  		offers.selected = offersTabs.selected;
+  		console.log( "Offers:"+offers.selected+" Tabs:"+offersTabs.selected);
+  	});
+
+  	var nearbyTabs = document.querySelector('#nearby-nav');
+  	var nearby = document.querySelector('core-selector#nearby-selector');
+
+  	nearbyTabs.addEventListener('core-select', function(detail){
+  		nearby.selected = nearbyTabs.selected;
+  		console.log( "nearby:"+nearby.selected+" Tabs:"+nearbyTabs.selected);
   	});
 
   	var bottomNav = document.querySelector('paper-tabs#bottom-tabs')
   	var panes = document.querySelector('core-selector#pane-selector')
-  	var topNav = document.querySelector('core-selector#nav-selector');
   	var map = document.querySelector('google-map');
   	var gpsEnabled = false;
   	
 
   	bottomNav.addEventListener('core-select', function(detail){
   		panes.selected = bottomNav.selected;
-  		topNav.selected = bottomNav.selected;
-  		console.log("Pane:"+panes.selected+ " topNav:"+topNav.selected+" bottomNav:"+bottomNav.selected + " Tab:" +tabs.selected);
   		if (panes.selected == 'nearby'){
   			setTimeout(function(){
   				map.resize();
   			}, .1);
   			if(gpsEnabled == false){
   				$('#location-modal').fadeIn(500);
-  				$('core-scroll-header-panel').addClass('blur');
+  				$('core-selector').addClass('blur');
   			}
   		}
   	});
@@ -351,7 +372,7 @@
 
     $('.close-location-modal').click(function(){
     	$('#location-modal').fadeOut(500);
-    	$('core-scroll-header-panel').removeClass('blur');
+    	$('core-selector').removeClass('blur');
     	gpsEnabled = true;
     });
 

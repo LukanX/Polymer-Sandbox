@@ -473,6 +473,7 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0;
+  background-color: #602D6C;
   font-family: "Gotham Medium", "Helvetica Neue", sans-serif;
   font-weight: regular; }
 
@@ -486,7 +487,8 @@ body {
 
 #pane-selector {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  color: #602D6C; }
 
 a {
   text-decoration: none; }
@@ -542,11 +544,6 @@ a {
       display: block;
       width: 100%; }
 
-.top-nav {
-  display: none; }
-  .top-nav.core-selected {
-    display: block; }
-
 /**** Merchant Logo Stuff ****/
 .merchant-logo {
   width: 60px;
@@ -571,7 +568,9 @@ a {
     left: 0;
     margin: auto; }
 
-core-scroll-header-panel {
+core-scroll-header-panel, core-header-panel {
+  visibility: hidden;
+  transition: .5s ease;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -580,8 +579,11 @@ core-scroll-header-panel {
   -ms-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
   overflow-scrolling: touch;
-  position: relative;
-  transition: .5s; }
+  position: absolute;
+  left: -1000px; }
+  core-scroll-header-panel.core-selected, core-header-panel.core-selected {
+    visibility: visible;
+    left: 0; }
 
 .bumper {
   width: 100%;
@@ -591,7 +593,7 @@ core-toolbar {
   background: #602D6C;
   color: white; }
 
-#navbar {
+.navbar {
   background: white;
   color: #602D6C; }
 
@@ -789,7 +791,13 @@ p.smaller {
 .sub-nav-pane {
   display: none; }
   .sub-nav-pane.core-selected {
-    display: block; }
+    display: block;
+    height: 100%;
+    width: 100%; }
+
+.subnav-selector {
+  height: 100%;
+  width: 100%; }
 
 .map-container {
   height: 100%;
@@ -814,7 +822,7 @@ google-map {
   margin: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
   padding: .5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
