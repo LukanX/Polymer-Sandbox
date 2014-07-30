@@ -124,7 +124,20 @@ a{
 	}
 }
 
+
+
 core-header-panel{
+	core-toolbar.rmn-secondar{
+		height: 110px;
+	}
+	img{
+		display: block;
+		margin: auto;
+		-webkit-transform: scale(.5);
+		-ms-transform: scale(.5);
+		-o-transform: scale(.5);
+		transform: scale(.5);
+	}
 
 }
 core-scroll-header-panel, core-header-panel{

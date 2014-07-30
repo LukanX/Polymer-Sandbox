@@ -59,10 +59,11 @@
 		<!-- ########### NEARBY ########-->
 		<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
 		  <core-header-panel pane="nearby">
-		  	<core-toolbar class = "medium-tall">
+		  	<core-toolbar class = "rmn-secondary">
 		  		<div flex self-center>
-						<img src="img/logo.png" alt="" id="small-logo">
+						<img  src="img/logo.png" alt="" id="small-logo">
 		  		</div>
+		  		<core-icon icon="search" size="32"></core-icon>
 		    	<div class ="bottom fit navbar" id="nearby-navbar">
 			      <paper-tabs id="nearby-nav" class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
 			        <paper-tab id="stores" name="stores">Stores</paper-tab>

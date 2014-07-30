@@ -26,6 +26,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   transition: height 0.18s ease-in;
 }
 
+:host(.rmn-secondary){
+  height: 105px;
+}
+
 :host(.medium-tall) {
   height: 128px;
 }
