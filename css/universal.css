@@ -580,7 +580,7 @@ core-header-panel img {
 
 core-scroll-header-panel, core-header-panel {
   visibility: hidden;
-  transition: filter .5s ease;
+  transition: .5s ease;
   height: 100%;
   width: 100%;
   overflow: auto;
