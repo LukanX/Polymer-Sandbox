@@ -397,6 +397,10 @@ core-toolbar{
 		}
 		&.map{
 			height: 100%;
+			margin-bottom: 64px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
 		}
 	}
 
@@ -405,6 +409,10 @@ core-toolbar{
 		width: 100%;
 		&.map{
 			height: 100%;
+			margin-bottom: 64px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
 		}
 	}
 
@@ -426,7 +434,7 @@ core-toolbar{
 
 	google-map{
 		width: 100%;
-		height: 100%;
+		height: 300px;
 	}
 
 /* Put in Bottom Nav Element */
