@@ -70,6 +70,9 @@ a{
 	position: relative;
 	text-align: center;
 	border-radius: .25em;
+	p{
+		margin: .5em;
+	}
 	.button{
 		font-size: .75em;
 		text-align: center;
@@ -78,8 +81,8 @@ a{
 	}
 	.x-out{
 		position: absolute;
-		top: 1em;
-		right: 1em;
+		top: .5em;
+		right: .5em;
 		width: 30px;
 		img{
 			display: block;
@@ -385,9 +388,9 @@ core-toolbar{
 	}
 
 	.blur{
-		-webkit-filter: blur(10px);
-		-o-filter: blur(10px);
-		filter: blur(10px);
+		-webkit-filter: blur(5px);
+		-o-filter: blur(5px);
+		filter: blur(5px);
 	}
 
 	google-map{
