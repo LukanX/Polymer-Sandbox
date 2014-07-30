@@ -815,9 +815,7 @@ p.smaller {
   width: 100%;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  padding-bottom: 64px;
-  transition: .5s; }
+  box-sizing: content-box; }
 
 .blur {
   -webkit-filter: blur(5px);
