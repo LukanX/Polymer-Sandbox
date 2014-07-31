@@ -108,6 +108,10 @@ a{
 	}
 }
 
+.bumper-top{
+
+}
+
 paper-input{
 	width: 100%;
 	color: rgba(96,45,108, .5);
@@ -126,6 +130,62 @@ paper-input{
 	left: 0;
 	z-index: 900;
 	padding-bottom: 20px;
+}
+
+.merchant-list-area{
+	width: 100%;
+	.merchant-info{
+		width: 100%;
+		border-bottom: #E0E0DC dashed 1px;
+		padding: 1em;
+		position: relative;
+		&.popular:after{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 40px 40px 0 0;
+			border-color: #602D6C transparent transparent transparent;
+			content: '';
+		}
+		.rank{
+			position: absolute;
+			top:.1em;
+			left: .1em;
+			color: white;
+			z-index: 1;
+		}
+		.save{
+			top: 1em;
+			right: 1em;
+		}
+		&:last-child{
+			border-bottom: #E0E0DC solid 1px;
+		}
+	}
+	.merchant-left{
+		margin-right: 1em;
+		p{text-align: center;}
+		
+	}
+	.merchant-logo{
+		width: 4em;
+		height: 4em;
+	}
+	p,h4{
+		margin: .5em;
+	}
+	.coupon-info{
+		padding-right: 2em;
+	}
+}
+
+.unstyled{
+	margin:0;
+	padding:0;
+	list-style: none;
 }
 
 #location-modal{
@@ -221,10 +281,7 @@ paper-input{
 
 
 
-core-header-panel{
-	core-toolbar.rmn-secondar{
-		height: 110px;
-	}
+.rmn-secondary{
 	img{
 		display: block;
 		margin: auto;
@@ -259,6 +316,7 @@ core-scroll-header-panel, core-header-panel{
 core-toolbar{
   background: #602D6C;
   color: white;
+  z-index: 100;
 }
 
 .navbar{
@@ -309,7 +367,7 @@ core-toolbar{
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	z-index: 1000;
+	z-index: 500;
 	top: -32px;
 }
 
@@ -427,6 +485,25 @@ core-toolbar{
 		position: absolute;
 		top: .75em;
 		right: 0;
+		.star{
+			position: relative;
+			width: 30px;
+			height:30px;
+			.save-icon{
+				position: absolute;
+				top:0;
+				right:0;
+				left:0;
+				bottom:0;
+				margin:auto;
+				z-index: 10;
+				fill: #A3A195;
+				&.inside{
+					fill:white;
+					z-index:5;
+				}
+			}
+		}
 	}
 
 	p.smaller{
@@ -510,13 +587,17 @@ core-toolbar{
 		position: relative;
 	}
 
-	.view-list{
+	.view-list, .view-map{
 		width: 100%;
 		padding: 1em;
 		background: #602D6C;
 		color: white;
+		text-align: center;
+	}
+
+	.view-list{
 		position: absolute;
-		bottom:169px;
+		bottom:64px;
 	}
 
 	.blur{
@@ -546,7 +627,7 @@ core-toolbar{
 	margin: 0;
 	bottom:0;
 	left:0;
-	z-index: 100;
+	z-index: 200;
 	padding: .5em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -564,4 +645,12 @@ core-toolbar{
 
 #bottom-tabs .icon-space{
 	text-align: center;
+}
+
+.hidden{
+	display: none !important;
+}
+
+.top-bumper{
+	height: 105px;
 }

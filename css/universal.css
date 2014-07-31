@@ -567,6 +567,51 @@ paper-input {
   z-index: 900;
   padding-bottom: 20px; }
 
+.merchant-list-area {
+  width: 100%; }
+  .merchant-list-area .merchant-info {
+    width: 100%;
+    border-bottom: #E0E0DC dashed 1px;
+    padding: 1em;
+    position: relative; }
+    .merchant-list-area .merchant-info.popular:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 40px 40px 0 0;
+      border-color: #602D6C transparent transparent transparent;
+      content: ''; }
+    .merchant-list-area .merchant-info .rank {
+      position: absolute;
+      top: .1em;
+      left: .1em;
+      color: white;
+      z-index: 1; }
+    .merchant-list-area .merchant-info .save {
+      top: 1em;
+      right: 1em; }
+    .merchant-list-area .merchant-info:last-child {
+      border-bottom: #E0E0DC solid 1px; }
+  .merchant-list-area .merchant-left {
+    margin-right: 1em; }
+    .merchant-list-area .merchant-left p {
+      text-align: center; }
+  .merchant-list-area .merchant-logo {
+    width: 4em;
+    height: 4em; }
+  .merchant-list-area p, .merchant-list-area h4 {
+    margin: .5em; }
+  .merchant-list-area .coupon-info {
+    padding-right: 2em; }
+
+.unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 #location-modal {
   display: none; }
 
@@ -644,9 +689,7 @@ paper-input {
     left: 0;
     margin: auto; }
 
-core-header-panel core-toolbar.rmn-secondar {
-  height: 110px; }
-core-header-panel img {
+.rmn-secondary img {
   display: block;
   margin: auto;
   -webkit-transform: scale(0.5);
@@ -674,7 +717,8 @@ core-scroll-header-panel, core-header-panel {
 
 core-toolbar {
   background: #602D6C;
-  color: white; }
+  color: white;
+  z-index: 100; }
 
 .navbar {
   background: white;
@@ -719,7 +763,7 @@ core-toolbar {
   margin: 0 auto;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 500;
   top: -32px; }
 
 .container {
@@ -816,6 +860,22 @@ core-toolbar {
   position: absolute;
   top: .75em;
   right: 0; }
+  .save .star {
+    position: relative;
+    width: 30px;
+    height: 30px; }
+    .save .star .save-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 10;
+      fill: #A3A195; }
+      .save .star .save-icon.inside {
+        fill: white;
+        z-index: 5; }
 
 p.smaller {
   font-size: .75em; }
@@ -884,13 +944,16 @@ p.smaller {
   width: 100%;
   position: relative; }
 
-.view-list {
+.view-list, .view-map {
   width: 100%;
   padding: 1em;
   background: #602D6C;
   color: white;
+  text-align: center; }
+
+.view-list {
   position: absolute;
-  bottom: 169px; }
+  bottom: 64px; }
 
 .blur {
   -webkit-filter: blur(5px);
@@ -915,7 +978,7 @@ google-map-marker {
   margin: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   padding: .5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -930,3 +993,9 @@ google-map-marker {
 
 #bottom-tabs .icon-space {
   text-align: center; }
+
+.hidden {
+  display: none !important; }
+
+.top-bumper {
+  height: 105px; }
