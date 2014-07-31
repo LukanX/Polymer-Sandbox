@@ -84,6 +84,8 @@ a{
 		text-align: center;
 		width: 100%;
 		background: #0995C3;
+		padding: 1.25em 1.5em;
+		margin-bottom: 1em;
 	}
 	.x-out{
 		position: absolute;
@@ -126,7 +128,7 @@ a{
 
 
 
-core-scroll-header-panel{
+core-header-panel{
 	core-toolbar.rmn-secondar{
 		height: 110px;
 	}

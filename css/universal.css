@@ -534,7 +534,9 @@ a {
     font-size: .75em;
     text-align: center;
     width: 100%;
-    background: #0995C3; }
+    background: #0995C3;
+    padding: 1.25em 1.5em;
+    margin-bottom: 1em; }
   .modal .x-out {
     position: absolute;
     top: .5em;
@@ -568,9 +570,9 @@ a {
     left: 0;
     margin: auto; }
 
-core-scroll-header-panel core-toolbar.rmn-secondar {
+core-header-panel core-toolbar.rmn-secondar {
   height: 110px; }
-core-scroll-header-panel img {
+core-header-panel img {
   display: block;
   margin: auto;
   -webkit-transform: scale(0.5);
