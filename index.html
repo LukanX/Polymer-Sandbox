@@ -20,6 +20,7 @@
   <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
   <link rel="import" href="bower_components/core-icon/core-icon.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
   <link rel="import" href="custom_components/featured-coupon.html">
   <link rel="import" href="custom_components/coupon-tile.html">
   <link rel="import" href="bower_components/google-map/google-map.html">
@@ -50,7 +51,7 @@
 			<div class="modal restaurant">
 				<img class="top-banner" src="img/restaurants-top.png" alt="">
 				<h2>Adventurous? Hungry?</h2>
-				<p>Become a member to access exclusiverestaurant offers in your area!</p>
+				<p>Become a member to access exclusive restaurant offers in your area!</p>
 				<div class="button full-button restaurants-signup-modal join-now-activate">join now!</div>
 				<p>Already a member? <a href="#">SIGN IN</a></p>
 				<p class = "grey smaller">view privacy policy</p>
@@ -60,7 +61,24 @@
 
 		<div id="signup" class="signup">
 			<div class="signup-container">
-				<h2>Nice to meet you!</h2>
+				<div id="signup-page-1" class = "transition-page signup-page viewing">
+					<h2>Nice to meet you!</h2>
+					<paper-input id="nameInput" label="Your Name"></paper-input>
+					<paper-input id="emailInput" type = "email" label="Email Address"></paper-input>
+					<paper-input type = "password" label="Password"></paper-input>
+					<div class="button continue-button">Sign Up</div>
+					<div class="divider">or</div>
+					<div class="button facebook continue-button">Sign Up with Facebook</div>
+					<p class = "smaller"><a href="">Sign In Instead</a></p>
+					<p class="grey smaller">Privacy Polcity | Terms of Use</p>
+				</div>
+
+				<div id="signup-page-2" class = "transition-page signup-page">
+					<img class = "top-image" src="img/wichguy.png" alt="">
+					<h2>Woohoo! Hiya, <span class="name-out">Your Name</span></h2>
+					<p>Now that you're aboard, let's check out some of those food deals!</p>
+					<div class="button signup-close-button">Check out Food Deals</div>
+				</div>
 			</div>
 		</div>
 
@@ -86,7 +104,7 @@
 			      <paper-tabs id="nearby-nav" class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
 			        <paper-tab id="stores" name="stores">Stores</paper-tab>
 			        <paper-tab id="malls" name="malls">Malls</paper-tab>
-			        <paper-tab id="restaurants" name="restaurants">Restaurants</paper-tab>
+			        <paper-tab id="restaurants" name="restaurants">Food</paper-tab>
 			      </paper-tabs>
 		      </div>
 		    </core-toolbar>
@@ -103,6 +121,7 @@
 		    					<google-map-marker latitude ="43.0420321" longitude="-77.4569437" title="gamestop" icon="img/gamestop-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0999659" longitude="-77.4477396" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
 		    				</google-map>
+		    				<div class="view-list">view as a list</div>
 		    			</div>
 		    		</div>
 
@@ -110,9 +129,9 @@
 						<div id="malls" class="sub-nav-pane map">
 		    			<div class="map-container" layout vertical>
 		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="malls-map">
-		    					<google-map-marker latitude ="43.1024315" longitude="-77.4830536" title="country club plaza (strip mall)"></google-map-marker>
-		    					<google-map-marker latitude ="43.0290988" longitude="-77.4427542" title="eastview mall (mall)"></google-map-marker>
-		    					<google-map-marker latitude ="43.0699784" longitude="-77.4396053" title="perinton quare mall (mini-mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.1024315" longitude="-77.4830536" title="country club plaza (strip mall)" icon="img/stripmall-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0295875" longitude="-77.4444816" title="eastview mall (mall)" icon="img/eastview-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0699784" longitude="-77.4396053" title="perinton quare mall (mini-mall)" icon="img/perinton-icon.png"></google-map-marker>
 		    				</google-map>
 		    			</div>
 		    		</div>
@@ -120,9 +139,9 @@
 		    		<div id="restaurants" class="sub-nav-pane map">
 		    			<div class="map-container" layout vertical>
 		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="restaurants-map">
-		    					<google-map-marker latitude ="43.1524315" longitude="-77.4830536" title="country club plaza (strip mall)"></google-map-marker>
-		    					<google-map-marker latitude ="43.2290988" longitude="-77.457542" title="eastview mall (mall)"></google-map-marker>
-		    					<google-map-marker latitude ="43.1499784" longitude="-77.4796053" title="perinton quare mall (mini-mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.1004045" longitude="-77.4848484" title="burger king" icon="img/burgerking-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0683312" longitude="-77.4410386" title="McDonalds" icon="img/mcdonalds-logo.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.031803" longitude="-77.443752" title="Starbucks" icon="img/starbucks-icon.png"></google-map-marker>
 		    				</google-map>
 		    			</div>
 		    		</div>
@@ -134,7 +153,7 @@
 
 		  <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader pane="offers">
 		  	<core-toolbar class = "tall">
-		  		<div flex self-center class="middle search-container">
+		  		<div flex self-center class="middle search-container" style="margin-bottom: 2em;">
 						<core-field>
 						<img src="img/logo.png" alt="" id="logo">
 						<core-icon icon="search"></core-icon>
@@ -362,6 +381,21 @@
   	var offersTabs = document.querySelector('#offers-nav');
   	var offers = document.querySelector('core-selector#offers-selector');
   	var map = document.querySelector('google-map');
+  	var nameInput = document.querySelector('paper-input#nameInput');
+  	var emailInput = document.querySelector('paper-input#emailInput');
+  	var name = "Your Name"
+
+  	nameInput.addEventListener('input',function(){
+  		name = nameInput.inputValue;
+  		$('.name-out').text(name); 
+  		console.log(name);
+  	})
+
+  	emailInput.addEventListener('input',function(){
+  		email = emailInput.inputValue;
+  		$('.email-out').text(email); 
+  		console.log(email);
+  	})
 
   	offersTabs.addEventListener('core-select', function(detail){
   		offers.selected = offersTabs.selected;
@@ -431,9 +465,19 @@
 
     $('.join-now-activate').click(function(){
     	$('#restaurants-signup-modal').fadeOut(500);
+    	$('#signup').addClass('display');
     	$('core-header-panel').removeClass('blur');
-    	//Add code to bring in signup here
     })
+
+    $('.continue-button').click(function(){
+    	$('#signup-page-1').removeClass('viewing');
+    	$('#signup-page-2').addClass('viewing');
+    });
+
+    $('.signup-close-button').click(function(){
+    	$('#signup').fadeOut(500);
+    	signedUp = true;
+    });
 
   </script>
  

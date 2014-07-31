@@ -504,16 +504,55 @@ a {
 .signup {
   height: 100%;
   width: 100%;
-  background: #F7F7F7;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 900;
   display: none; }
+  .signup.display {
+    display: block; }
 
 .signup-container {
-  padding: 2em 1em;
-  position: relative; }
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background: #F7F7F7; }
+
+.signup-page {
+  padding: 2em;
+  background: #F7F7F7; }
+  .signup-page h2, .signup-page p {
+    text-align: center; }
+  .signup-page .button {
+    text-align: center;
+    text-transform: none;
+    border-radius: 6em;
+    margin: 0 auto; }
+    .signup-page .button.facebook {
+      background: url(../img/facebook-f.png) no-repeat 1.5em center #3c5a98;
+      background-size: 11px 23px;
+      padding-left: 2.5em;
+      position: relative; }
+  .signup-page .divider {
+    padding: 1em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.25); }
+
+.transition-page {
+  position: absolute;
+  transition: .5s;
+  display: none; }
+  .transition-page .top-image {
+    display: block;
+    width: 80%;
+    margin: 1em auto; }
+  .transition-page.viewing {
+    display: block; }
+
+paper-input {
+  width: 100%;
+  color: rgba(96, 45, 108, 0.5);
+  margin: 1em 0; }
 
 .modal-bg {
   height: 100%;
@@ -556,7 +595,8 @@ a {
     background: #0995C3;
     padding: 1.25em 1.5em; }
   .modal.restaurant {
-    padding-top: 4em; }
+    padding-top: 4em;
+    margin: 30% auto 0; }
     .modal.restaurant .top-banner {
       display: block;
       width: 70%;
@@ -831,26 +871,26 @@ p.smaller {
     width: 100%; }
   .sub-nav-pane.map {
     height: 100%;
-    margin-bottom: 64px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box; }
+    margin-bottom: 64px; }
 
 .subnav-selector {
   width: 100%; }
   .subnav-selector.map {
     height: 100%;
-    margin-bottom: 64px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box; }
+    margin-bottom: 64px; }
 
 .map-container {
   height: 100%;
   width: 100%;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box; }
+  position: relative; }
+
+.view-list {
+  width: 100%;
+  padding: 1em;
+  background: #602D6C;
+  color: white;
+  position: absolute;
+  bottom: 169px; }
 
 .blur {
   -webkit-filter: blur(5px);
