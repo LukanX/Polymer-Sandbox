@@ -56,6 +56,7 @@ a{
 	top: 0;
 	left: 0;
 	z-index: 900;
+	display: none;
 }
 
 .signup-container{
@@ -79,7 +80,6 @@ a{
 
 #location-modal{
 	display: none;
-	background-image: url(../img/goldhills.png) no-repeat bottom center;
 }
 
 #restaurants-signup-modal{
@@ -93,12 +93,15 @@ a{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background-color: #fff;
-	-webkit-background-size: 100%;
-	background-size: 100%;
 	margin: 40% auto 0;
 	position: relative;
 	text-align: center;
 	border-radius: .25em;
+	&.location{
+		background: url(../img/goldhills.png) no-repeat bottom center #fff;
+		-webkit-background-size: 100%;
+		background-size: 100%;
+	}
 	.button{
 		font-size: .75em;
 		text-align: center;

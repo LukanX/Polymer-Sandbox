@@ -508,7 +508,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 900; }
+  z-index: 900;
+  display: none; }
 
 .signup-container {
   padding: 2em 1em;
@@ -528,8 +529,7 @@ a {
   padding-bottom: 20px; }
 
 #location-modal {
-  display: none;
-  background-image: url(../img/goldhills.png) no-repeat bottom center; }
+  display: none; }
 
 #restaurants-signup-modal {
   display: none; }
@@ -541,12 +541,14 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
-  -webkit-background-size: 100%;
-  background-size: 100%;
   margin: 40% auto 0;
   position: relative;
   text-align: center;
   border-radius: .25em; }
+  .modal.location {
+    background: url(../img/goldhills.png) no-repeat bottom center white;
+    -webkit-background-size: 100%;
+    background-size: 100%; }
   .modal .button {
     font-size: .75em;
     text-align: center;
