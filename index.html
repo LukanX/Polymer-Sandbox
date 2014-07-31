@@ -46,6 +46,24 @@
 			</div>
 		</div>
 
+		<div id="restaurants-signup-modal" class="modal-bg">
+			<div class="modal restaurant">
+				<img class="top-banner" src="img/restaurants-top.png" alt="">
+				<h2>Adventurous? Hungry?</h2>
+				<p>Become a member to access exclusiverestaurant offers in your area!</p>
+				<div class="button full-button restaurants-signup-modal join-now-activate">join now!</div>
+				<p>Already a member? <a href="#">SIGN IN</a></p>
+				<p class = "grey smaller">view privacy policy</p>
+				<div class="x-out "><img src="img/dark-x-out.png" alt=""></div>
+			</div>
+		</div>
+
+		<div id="signup" class="signup">
+			<div class="signup-container">
+				<h2>Nice to meet you!</h2>
+			</div>
+		</div>
+
 		<div id="bottom-nav">
   		<paper-tabs id="bottom-tabs" valueattr="name" selected="offers" self-end noink nobar>
         <paper-tab name="offers"><div class="icon-space"><core-icon icon="home"></core-icon><p>offers</p></div></paper-tab>
@@ -74,23 +92,45 @@
 		    </core-toolbar>
 		    <div class="content container" layout vertical>
 		    	<core-selector id = "nearby-selector" class="subnav-selector map" valueattr="id" selected="stores" itemSelector="paper-tabs#nearby-nav">
-		    			<div id="stores" class="sub-nav-pane map">
-			    			<div class="map-container" layout vertical>
-			    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12">
-			    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
-			    					<google-map-marker latitude ="42.9945712" longitude="-77.4421287" title="best buy" icon="img/bestbuy-icon.png"></google-map-marker>
-			    					<google-map-marker latitude ="43.0699156" longitude="-77.4898237" title="target" icon="img/target-icon.png"></google-map-marker>
-			    					<google-map-marker latitude ="43.0420321" longitude="-77.4569437" title="gamestop" icon="img/gamestop-icon.png"></google-map-marker>
-			    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
-			    					<google-map-marker latitude ="43.0999659" longitude="-77.4477396" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
-			    				</google-map>
-			    			</div>
-			    		</div>
-			    	</core-selector>
+
+		    		<!-- ############# STORES ############# -->
+	    			<div id="stores" class="sub-nav-pane map">
+		    			<div class="map-container" layout vertical>
+		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="stores-map">
+		    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
+		    					<google-map-marker latitude ="42.9945712" longitude="-77.4421287" title="best buy" icon="img/bestbuy-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0699156" longitude="-77.4898237" title="target" icon="img/target-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0420321" longitude="-77.4569437" title="gamestop" icon="img/gamestop-icon.png"></google-map-marker>
+		    					<google-map-marker latitude ="43.0999659" longitude="-77.4477396" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
+		    				</google-map>
+		    			</div>
+		    		</div>
+
+		    		<!-- ############# MALLS ############# -->
+						<div id="malls" class="sub-nav-pane map">
+		    			<div class="map-container" layout vertical>
+		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="malls-map">
+		    					<google-map-marker latitude ="43.1024315" longitude="-77.4830536" title="country club plaza (strip mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.0290988" longitude="-77.4427542" title="eastview mall (mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.0699784" longitude="-77.4396053" title="perinton quare mall (mini-mall)"></google-map-marker>
+		    				</google-map>
+		    			</div>
+		    		</div>
+		    		<!-- ############# RESTAURANTS ############# -->
+		    		<div id="restaurants" class="sub-nav-pane map">
+		    			<div class="map-container" layout vertical>
+		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="restaurants-map">
+		    					<google-map-marker latitude ="43.1524315" longitude="-77.4830536" title="country club plaza (strip mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.2290988" longitude="-77.457542" title="eastview mall (mall)"></google-map-marker>
+		    					<google-map-marker latitude ="43.1499784" longitude="-77.4796053" title="perinton quare mall (mini-mall)"></google-map-marker>
+		    				</google-map>
+		    			</div>
+		    		</div>
+		    	</core-selector>
 		    </div>
 		  </core-header-panel>
 
-		  <!-- ############# OFFERS ######### -->
+		  <!-- ############# OFFERS ############# -->
 
 		  <core-scroll-header-panel condenses condensedHeaderHeight="140" keepCondensedHeader pane="offers">
 		  	<core-toolbar class = "tall">
@@ -330,13 +370,19 @@
 
   	var nearbyTabs = document.querySelector('#nearby-nav');
   	var nearby = document.querySelector('core-selector#nearby-selector');
+  	var signedUp = false;
 
   	nearbyTabs.addEventListener('core-select', function(detail){
+  		var thisMap = $('#'+nearbyTabs.selected+"-map")
   		nearby.selected = nearbyTabs.selected;
   		console.log( "nearby:"+nearby.selected+" Tabs:"+nearbyTabs.selected);
   		setTimeout(function(){
-  				map.resize();
+  				thisMap.resize();
   			}, .1);
+  		if (nearby.selected == "restaurants" && signedUp == false){
+  			$('#restaurants-signup-modal').fadeIn(500);
+  			$('core-header-panel').addClass('blur');
+  		}
   	});
 
   	var bottomNav = document.querySelector('paper-tabs#bottom-tabs')
@@ -352,7 +398,7 @@
   			}, .1);
   		if (panes.selected == 'nearby' && gpsEnabled == false){
   				$('#location-modal').fadeIn(500);
-  				$('core-selector').addClass('blur');
+  				$('core-header-panel').addClass('blur');
   		}
   	});
 
@@ -379,9 +425,15 @@
 
     $('.close-location-modal').click(function(){
     	$('#location-modal').fadeOut(500);
-    	$('core-selector').removeClass('blur');
+    	$('core-header-panel').removeClass('blur');
     	gpsEnabled = true;
     });
+
+    $('.join-now-activate').click(function(){
+    	$('#restaurants-signup-modal').fadeOut(500);
+    	$('core-header-panel').removeClass('blur');
+    	//Add code to bring in signup here
+    })
 
   </script>
  

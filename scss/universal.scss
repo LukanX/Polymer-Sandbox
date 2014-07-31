@@ -48,6 +48,21 @@ a{
 	}
 }
 
+.signup{
+	height: 100%;
+	width: 100%;
+	background: #F7F7F7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+}
+
+.signup-container{
+	padding: 2em 1em;
+	position: relative;
+}
+
 .modal-bg{
 	height: 100%;
 	width: 100%;
@@ -64,6 +79,11 @@ a{
 
 #location-modal{
 	display: none;
+	background-image: url(../img/goldhills.png) no-repeat bottom center;
+}
+
+#restaurants-signup-modal{
+	display: none;
 }
 
 .modal{
@@ -72,7 +92,7 @@ a{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	background: url(../img/goldhills.png) no-repeat bottom center #fff;
+	background-color: #fff;
 	-webkit-background-size: 100%;
 	background-size: 100%;
 	margin: 40% auto 0;
@@ -85,8 +105,27 @@ a{
 		width: 100%;
 		background: #0995C3;
 		padding: 1.25em 1.5em;
-		margin-bottom: 1em;
 	}
+	&.restaurant{
+			padding-top: 4em;
+			.top-banner{
+				display: block;
+				width: 70%;
+				position: absolute;
+				top: -3em;
+				right: 0;
+				left: 0;
+				margin: 0 auto;
+			}
+			.button{
+				width: 50%;
+				border-radius: 6em;
+				margin: 0 auto;
+			}
+			.x-out{
+				top: -4em;
+			}
+		}
 	.x-out{
 		position: absolute;
 		top: .5em;
