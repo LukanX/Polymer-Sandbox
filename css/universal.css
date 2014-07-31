@@ -568,9 +568,9 @@ a {
     left: 0;
     margin: auto; }
 
-core-header-panel core-toolbar.rmn-secondar {
+core-scroll-header-panel core-toolbar.rmn-secondar {
   height: 110px; }
-core-header-panel img {
+core-scroll-header-panel img {
   display: block;
   margin: auto;
   -webkit-transform: scale(0.5);
@@ -824,6 +824,12 @@ p.smaller {
 google-map {
   width: 100%;
   height: 100%; }
+
+google-map-marker {
+  -webkit-transform: sacle(0.75);
+  -ms-transform: sacle(0.75);
+  -o-transform: sacle(0.75);
+  transform: sacle(0.75); }
 
 /* Put in Bottom Nav Element */
 #bottom-nav {

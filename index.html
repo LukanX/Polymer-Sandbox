@@ -58,8 +58,8 @@
 		
 		<!-- ########### NEARBY ########-->
 		<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
-		  <core-header-panel pane="nearby">
-		  	<core-toolbar class = "medium-tall">
+		  <core-scroll-header-panel fixed pane="nearby">
+		  	<core-toolbar class = "rmn-secondary">
 		  		<div flex self-center>
 						<img  src="img/logo.png" alt="" id="small-logo">
 		  		</div>
@@ -88,7 +88,7 @@
 			    		</div>
 			    	</core-selector>
 		    </div>
-		  </core-header-panel>
+		  </core-scroll-header-panel>
 
 		  <!-- ############# OFFERS ######### -->
 
