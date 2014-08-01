@@ -509,7 +509,7 @@ a {
       padding: .5em;
       border-radius: .25em; }
 
-#search-picture, #kohls-picture, #offer-picture {
+#search-picture, #kohls-picture, #offer-picture, #mall-picture {
   height: 100%;
   width: 100%;
   z-index: 900;
@@ -524,6 +524,11 @@ a {
 
 #kohls-picture {
   background: url(../img/store.jpg) no-repeat top left;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+#mall-picture {
+  background: url(../img/mall.jpg) no-repeat top left;
   -webkit-background-size: cover;
   background-size: cover; }
 

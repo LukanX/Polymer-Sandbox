@@ -55,6 +55,8 @@
 
 		<div id="kohls-picture" class="hidden"></div>
 
+		<div id="mall-picture" class="hidden"></div>
+
 		<div id="offer-picture" class="hidden">
 			<img src="img/offer.jpg" alt="">
 		</div>
@@ -495,7 +497,7 @@
 		    		<!-- ############# MALLS ############# -->
 						<div id="malls" class="sub-nav-pane map">
 		    			<div id="mall-map" class="map-container" layout vertical>
-		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="malls-map">
+		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="malls-map" class="mall-fire">
 		    					<google-map-marker latitude ="43.1024315" longitude="-77.4830536" title="country club plaza (strip mall)" icon="img/stripmall-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0295875" longitude="-77.4444816" title="eastview mall (mall)" icon="img/eastview-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0699784" longitude="-77.4396053" title="perinton quare mall (mini-mall)" icon="img/perinton-icon.png"></google-map-marker>
@@ -506,7 +508,7 @@
 		    				<div class="top-bumper"></div>
 		    				<div class="merchant-list-area">
 					  			<ul class="unstyled">
-					  				<li class="merchant-info" horizontal layout>
+					  				<li class="merchant-info mall-fire" horizontal layout>
 							  			<div class="merchant-left">
 							  				<div class="merchant-logo" style="background: url(http://www.eastviewmall.com/Images/Properties/header-logo-eastview.gif) no-repeat center center; background-size: contain"></div>
 							  				<p class="smaller grey">3.2mi</p>
@@ -517,7 +519,7 @@
 							  			</div>
 							  		</li>
 
-							  		<li class="merchant-info" horizontal layout>
+							  		<li class="merchant-info mall-fire" horizontal layout>
 							  			<div class="merchant-left">
 							  				<div class="merchant-logo" style="background: url(http://www.perintonsquaremall.com/wp-content/uploads/2013/08/Perinton-old-logo-with-tree.png) no-repeat center center; background-size: contain;"></div>
 							  				<p class="smaller grey">4.5mi</p>
@@ -528,7 +530,7 @@
 							  			</div>
 							  		</li>
 
-							  		<li class="merchant-info" horizontal layout>
+							  		<li class="merchant-info mall-fire" horizontal layout>
 							  			<div class="merchant-left">
 							  				<div class="merchant-logo" style="background: url(http://thumb9.shutterstock.com/thumb_small/77929/77929,1265853224,2/stock-photo-upscale-pastel-strip-mall-building-with-red-awnings-and-tinted-glass-46422178.jpg) no-repeat center center; background-size: contain;"></div>
 							  				<p class="smaller grey">7.7mi</p>
@@ -1046,6 +1048,14 @@
 
     $('.kohls-fire').click(function(){
     	$('#kohls-picture').removeClass('hidden');
+    });
+
+    $('.mall-fire').click(function(){
+    	$('#mall-picture').removeClass('hidden');
+    });
+
+    $('#mall-picture').click(function(){
+    	$('#mall-picture').addClass('hidden');
     });
 
     $('#kohls-picture').click(function(){
