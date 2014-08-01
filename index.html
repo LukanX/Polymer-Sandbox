@@ -38,11 +38,12 @@
   </style>
 
   <body unresolved touch-action="auto">
+
   	<div id="location-modal" class="modal-bg">
 			<div class="modal location">
-				<h3>Thar's gold in them there hills, friend!</h3>
-				<p>Enable Nearby Offer Notifications to find savings on the go!</p>
-				<div class="button full-button close-location-modal">get nearby offer notifications</div>
+				<h3>Get Offers Near You</h3>
+				<p>We can’t find you! Turn your location services on to get great local offers.</p>
+				<div class="button location-button close-location-modal">turn on location services</div>
 				<p class = "smaller"><a href="#" class="close-location-modal">NO THANKS</a></p>
 				<p class = "grey smaller">view privacy policy</p>
 				<div class="x-out close-location-modal"><img src="img/x-out.png" alt=""></div>
@@ -87,7 +88,7 @@
 					<img class = "top-image" src="img/wichguy.png" alt="">
 					<h2>Woohoo! Hiya, <span class="name-out">Your Name</span></h2>
 					<p>Now that you're aboard, let's check out some of those food deals!</p>
-					<div class="button">Check out Food Deals</div>
+					<div class="button signup-close-button">Check out Food Deals</div>
 				</div>
 			</div>
 		</div>
@@ -375,6 +376,7 @@
 		    </core-toolbar>
 		    <div class="content container" layout vertical>
 		    	<core-selector id = "nearby-selector" class="subnav-selector map" valueattr="id" selected="stores" itemSelector="paper-tabs#nearby-nav">
+		    	
 
 		    		<!-- ############# STORES ############# -->
 	    			<div id="stores" class="sub-nav-pane map">
@@ -970,6 +972,10 @@
     	$('#location-modal').fadeOut(500);
     	$('core-header-panel').removeClass('blur');
     	gpsEnabled = true;
+    	var thisMap = $('#'+nearbyTabs.selected+"-map")
+    	setTimeout(function(){
+  				thisMap.resize();
+  			}, .1);
     });
 
     $('.join-now-activate').click(function(){

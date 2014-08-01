@@ -10,6 +10,7 @@
 
 
 
+
 html,body {
   height: 100%;
   width: 100%;
@@ -334,8 +335,35 @@ paper-input{
 	display: none;
 }
 
+.inapp-bg{
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	top: 105px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	z-index: 900;
+}
+
 #restaurants-signup-modal{
 	display: none;
+}
+
+.popup{
+	width: 100%;
+	padding: 1em;
+	height: 100%;
+	.button{
+		font-size: .75em;
+		text-align: center;
+		width: 100%;
+		background: #0995C3;
+		padding: 1.25em 1.5em;
+	}
 }
 
 .modal{
@@ -360,6 +388,9 @@ paper-input{
 		width: 100%;
 		background: #0995C3;
 		padding: 1.25em 1.5em;
+		&.location-button{
+			background: #22B38B;
+		}
 	}
 	&.restaurant{
 			padding-top: 4em;
