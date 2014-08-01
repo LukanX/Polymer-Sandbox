@@ -554,9 +554,15 @@ a {
   .profile-area p {
     font-size: .75em;
     margin: .25em 0; }
+    .profile-area p.field-label {
+      font-size: 1em; }
   .profile-area core-icon {
     margin-right: .5em;
     fill: rgba(0, 0, 0, 0.25); }
+  .profile-area .button {
+    text-align: center; }
+    .profile-area .button.button-small {
+      font-size: .5em; }
 
 .section-header {
   margin-bottom: .5em;
@@ -597,8 +603,8 @@ a {
   margin-right: 1em; }
 
 .photo-box {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: rgba(0, 0, 0, 0.15); }
 
 .pane {
