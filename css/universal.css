@@ -493,27 +493,51 @@ body {
 a {
   text-decoration: none; }
 
-#search-picture {
+.favorites-bar {
+  border-top: #2b1430 solid 1px;
+  background: #602D6C;
+  color: white;
+  max-height: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 1em; }
+  .favorites-bar p {
+    font-size: .6em;
+    padding: .25em 0; }
+    .favorites-bar p.add-stores {
+      background: #2b1430;
+      padding: .5em;
+      border-radius: .25em; }
+
+#search-picture, #kohls-picture, #offer-picture {
   height: 100%;
   width: 100%;
   z-index: 900;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; }
+
+#search-picture {
   background: url(../img/search.jpg) no-repeat top left;
   -webkit-background-size: cover;
   background-size: cover; }
 
 #kohls-picture {
-  height: 100%;
-  width: 100%;
-  z-index: 900;
-  position: absolute;
-  top: 0;
-  left: 0;
   background: url(../img/store.jpg) no-repeat top left;
   -webkit-background-size: cover;
   background-size: cover; }
+
+#offer-picture img {
+  width: 100%; }
+
+#favorites-picture, #saved-picture {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 105px;
+  left: 0; }
+  #favorites-picture img, #saved-picture img {
+    width: 100%; }
 
 .pane {
   display: none; }

@@ -51,6 +51,10 @@
 
 		<div id="kohls-picture" class="hidden"></div>
 
+		<div id="offer-picture" class="hidden">
+			<img src="img/offer.jpg" alt="">
+		</div>
+
 		<div id="restaurants-signup-modal" class="modal-bg">
 			<div class="modal restaurant">
 				<img class="top-banner" src="img/restaurants-top.png" alt="">
@@ -95,9 +99,52 @@
         <paper-tab name="me"><div class="icon-space"><core-icon icon="social:person"></core-icon><p>me</p></div></paper-tab>
       </paper-tabs>
   	</div>
+
+  	
+
 		
-		<!-- ########### NEARBY ########-->
+		
 		<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
+
+			<!-- ########### Saved ########-->
+		  <core-scroll-header-panel pane="saved" fixed>
+		  	<core-toolbar class = "rmn-secondary">
+		  		<div flex self-center>
+						<img  src="img/logo.png" alt="" id="small-logo">
+		  		</div>
+		  		<core-icon icon="search" size="32" class="search-button"></core-icon>
+		    	<div class ="bottom fit navbar" id="saved-navbar">
+			      <paper-tabs id="saved-nav" class="top-nav" valueattr="name" selected="online" self-end noink="true" pane="nearby">
+			        <paper-tab id="stores" name="online">Online</paper-tab>
+			        <paper-tab id="malls" name="expiring">Expiring</paper-tab>
+			        <paper-tab id="restaurants" name="restaurants">Food</paper-tab>
+			      </paper-tabs>
+		      </div>
+		    </core-toolbar>
+		    <div class="content container" layout vertical>
+		    	<div id="saved-picture"><img src="img/saved.jpg" alt=""></div>
+			  </div>
+			</core-scroll-header-panel>
+
+			<!-- ########### Favorites ########-->
+		  <core-scroll-header-panel pane="favorites" fixed>
+		  	<core-toolbar class = "rmn-secondary">
+		  		<div flex self-center>
+						<img  src="img/logo.png" alt="" id="small-logo">
+		  		</div>
+		  		<core-icon icon="search" size="32" class="search-button"></core-icon>
+		    	<div class ="bottom fit favorites-bar" id="nearby-navbar" layout horizontal center>
+			      <div><p>2 favorites</p></div>
+			      <div flex></div>
+			      <div><p class="add-stores" right>add stores</p></div>
+		      </div>
+		    </core-toolbar>
+		    <div class="content container" layout vertical>
+		    	<div id="favorites-picture"><img src="img/favorites.jpg" alt=""></div>
+			  </div>
+			</core-scroll-header-panel>
+			
+			<!-- ########### NEARBY ########-->
 		  <core-scroll-header-panel pane="nearby" fixed>
 		  	<core-toolbar class = "rmn-secondary">
 		  		<div flex self-center>
@@ -782,6 +829,11 @@
 
     $('#kohls-picture').click(function(){
     	$('#kohls-picture').addClass('hidden');
+    	$('#offer-picture').removeClass('hidden');
+    });
+
+    $('#offer-picture').click(function(){
+    	$('#offer-picture').addClass('hidden');
     });
  
 
