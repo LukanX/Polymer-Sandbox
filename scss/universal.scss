@@ -373,7 +373,7 @@ paper-input{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background-color: #fff;
-	margin: 40% auto 0;
+	margin: 20% auto 0;
 	position: relative;
 	text-align: center;
 	border-radius: .25em;
@@ -381,6 +381,11 @@ paper-input{
 		background: url(../img/goldhills.png) no-repeat bottom center #fff;
 		-webkit-background-size: 100%;
 		background-size: 100%;
+		.location-head-icon{
+			width: 50%;
+			margin: 0 auto;
+			img{ display: block; width: 100%;}
+		}
 	}
 	.button{
 		font-size: .75em;
