@@ -493,6 +493,28 @@ body {
 a {
   text-decoration: none; }
 
+#search-picture {
+  height: 100%;
+  width: 100%;
+  z-index: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/search.jpg) no-repeat top left;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+#kohls-picture {
+  height: 100%;
+  width: 100%;
+  z-index: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/store.jpg) no-repeat top left;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
 .pane {
   display: none; }
   .pane.core-selected {
@@ -876,6 +898,8 @@ core-toolbar {
       .save .star .save-icon.inside {
         fill: white;
         z-index: 5; }
+        .save .star .save-icon.inside.clicked {
+          fill: #ECDA1F; }
 
 p.smaller {
   font-size: .75em; }

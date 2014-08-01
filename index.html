@@ -47,6 +47,10 @@
 			</div>
 		</div>
 
+		<div id="search-picture" class="hidden"></div>
+
+		<div id="kohls-picture" class="hidden"></div>
+
 		<div id="restaurants-signup-modal" class="modal-bg">
 			<div class="modal restaurant">
 				<img class="top-banner" src="img/restaurants-top.png" alt="">
@@ -99,7 +103,7 @@
 		  		<div flex self-center>
 						<img  src="img/logo.png" alt="" id="small-logo">
 		  		</div>
-		  		<core-icon icon="search" size="32"></core-icon>
+		  		<core-icon icon="search" size="32" class="search-button"></core-icon>
 		    	<div class ="bottom fit navbar" id="nearby-navbar">
 			      <paper-tabs id="nearby-nav" class="top-nav" valueattr="name" selected="stores" self-end noink="true" pane="nearby">
 			        <paper-tab id="stores" name="stores">Stores</paper-tab>
@@ -114,7 +118,7 @@
 		    		<!-- ############# STORES ############# -->
 	    			<div id="stores" class="sub-nav-pane map">
 		    			<div id="store-map" class="map-container" layout vertical>
-		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="stores-map">
+		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="stores-map" class="kohls-fire">
 		    					<google-map-marker latitude ="43.0173123" longitude="-77.4358094" title="kohls" icon="img/kohlsicon.png"></google-map-marker>
 		    					<google-map-marker latitude ="42.9945712" longitude="-77.4421287" title="best buy" icon="img/bestbuy-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0699156" longitude="-77.4898237" title="target" icon="img/target-icon.png"></google-map-marker>
@@ -127,7 +131,7 @@
 		    				<div class="top-bumper"></div>
 		    				<div class="merchant-list-area">
 					  			<ul class="unstyled">
-					  				<li class="merchant-info" horizontal layout>
+					  				<li class="merchant-info kohls-fire" horizontal layout>
 							  			<div class="merchant-left">
 							  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/l/kohls.com-coupons.jpg) no-repeat center center; background-size: contain"></div>
 							  				<p class="smaller grey">0.5mi</p>
@@ -199,7 +203,7 @@
 							  				<p class = "smaller">save</p>
 							  			</div>
 							  		</li>
-							  		<li class="merchant-info" horizontal layout>
+							  		<li class="merchant-info kohls-fire" horizontal layout>
 							  			<div class="merchant-left">
 							  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/l/kohls.com-coupons.jpg) no-repeat center center; background-size: contain"></div>
 							  				<p class="smaller grey">4.6mi</p>
@@ -226,23 +230,131 @@
 
 		    		<!-- ############# MALLS ############# -->
 						<div id="malls" class="sub-nav-pane map">
-		    			<div class="map-container" layout vertical>
+		    			<div id="mall-map" class="map-container" layout vertical>
 		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="malls-map">
 		    					<google-map-marker latitude ="43.1024315" longitude="-77.4830536" title="country club plaza (strip mall)" icon="img/stripmall-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0295875" longitude="-77.4444816" title="eastview mall (mall)" icon="img/eastview-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0699784" longitude="-77.4396053" title="perinton quare mall (mini-mall)" icon="img/perinton-icon.png"></google-map-marker>
 		    				</google-map>
+		    				<div id="mall-list-button" class="view-list">view as a list</div>
+		    			</div>
+		    			<div id="mall-list" class="list-container hidden">
+		    				<div class="top-bumper"></div>
+		    				<div class="merchant-list-area">
+					  			<ul class="unstyled">
+					  				<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://www.eastviewmall.com/Images/Properties/header-logo-eastview.gif) no-repeat center center; background-size: contain"></div>
+							  				<p class="smaller grey">3.2mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">Mall</p>
+							  				<h4>Eastview Mall</h4>
+							  			</div>
+							  		</li>
+
+							  		<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://www.perintonsquaremall.com/wp-content/uploads/2013/08/Perinton-old-logo-with-tree.png) no-repeat center center; background-size: contain;"></div>
+							  				<p class="smaller grey">4.5mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">Mini-Mall</p>
+							  				<h4>Perinton Square Mall</h4>
+							  			</div>
+							  		</li>
+
+							  		<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://thumb9.shutterstock.com/thumb_small/77929/77929,1265853224,2/stock-photo-upscale-pastel-strip-mall-building-with-red-awnings-and-tinted-glass-46422178.jpg) no-repeat center center; background-size: contain;"></div>
+							  				<p class="smaller grey">7.7mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">Strip Mall</p>
+							  				<h4>Country Club Plaza</h4>
+							  			</div>
+							  		</li>
+							  	</ul>
+							  	<div id="mall-map-button" class="view-map">view on map</div>
+							  	<div class="bumper"></div>
+					  		</div>
 		    			</div>
 		    		</div>
 		    		<!-- ############# RESTAURANTS ############# -->
 		    		<div id="restaurants" class="sub-nav-pane map">
-		    			<div class="map-container" layout vertical>
+		    			<div class="map-container" layout vertical id="food-map">
 		    				<google-map latitude = "43.0450837" longitude = "-77.4700816" zoom="12" id="restaurants-map">
 		    					<google-map-marker latitude ="43.1004045" longitude="-77.4848484" title="burger king" icon="img/burgerking-icon.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.0683312" longitude="-77.4410386" title="McDonalds" icon="img/mcdonalds-logo.png"></google-map-marker>
 		    					<google-map-marker latitude ="43.031803" longitude="-77.443752" title="Starbucks" icon="img/starbucks-icon.png"></google-map-marker>
 		    				</google-map>
+		    				<div id="food-list-button" class="view-list">view as a list</div>
 		    			</div>
+
+		    			<div id="food-list" class="list-container hidden">
+		    				<div class="top-bumper"></div>
+		    				<div class="merchant-list-area">
+					  			<ul class="unstyled">
+					  				<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/m/store.starbucks.com-coupons.jpg) no-repeat center center; background-size: contain"></div>
+							  				<p class="smaller grey">0.6mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">RetailMeNot Exclusive</p>
+							  				<h4>Starbucks</h4>
+							  				<p>30% On Starbucks Cold Cups </p>
+							  			</div>
+							  			<div class="save">
+							  				<div class="star">
+							  					<core-icon class="save-icon" icon="star-outline" size="30"></core-icon>
+							  					<core-icon class="save-icon inside" icon="star" size="30"></core-icon>
+							  				</div>
+							  				<p class = "smaller">save</p>
+							  			</div>
+							  		</li>
+							  		<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/m/mcdonalds.com-coupons.jpg) no-repeat center center; background-size: contain;"></div>
+							  				<p class="smaller grey">.8mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">In-Store Coupon</p>
+							  				<h4>McDonalds</h4>
+							  				<p>Free McChicken Or BBQ Ranch Burger</p>
+							  			</div>
+							  			<div class="save">
+							  				<div class="star">
+							  					<core-icon class="save-icon" icon="star-outline" size="30"></core-icon>
+							  					<core-icon class="save-icon inside" icon="star" size="30"></core-icon>
+							  				</div>
+							  				<p class = "smaller">save</p>
+							  			</div>
+							  		</li>
+							  		<li class="merchant-info" horizontal layout>
+							  			<div class="merchant-left">
+							  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/m/bk.com-coupons.jpg) no-repeat center center; background-size: contain;"></div>
+							  				<p class="smaller grey">2.7mi</p>
+							  			</div>
+							  			<div class="coupon-info" flex>
+							  				<p class="grey smaller">In-Store Coupon</p>
+							  				<h4>Burger King</h4>
+							  				<p>2 Sandwiches For Just $5 </p>
+							  			</div>
+							  			<div class="save">
+							  				<div class="star">
+							  					<core-icon class="save-icon" icon="star-outline" size="30"></core-icon>
+							  					<core-icon class="save-icon inside" icon="star" size="30"></core-icon>
+							  				</div>
+							  				<p class = "smaller">save</p>
+							  			</div>
+							  		</li>
+							  	</ul>
+							  	<div id="food-map-button" class="view-map">view on map</div>
+							  	<div class="bumper"></div>
+					  		</div>
+		    			</div>
+
 		    		</div>
 		    	</core-selector>
 		    </div>
@@ -294,7 +406,7 @@
 						  		<h1>15% Off Home &amp; In Store Support</h1>
 						  		<h2>In-Store Coupon</h2>
 						  	</coupon-tile>
-						  	<coupon-tile backgroundColor="#7a0026">
+						  	<coupon-tile backgroundColor="#7a0026" class="kohls-fire">
 						  		<img src="img/kohls-logo.png" alt="">
 						  		<h1>$10 Off $50 Home Goods</h1>
 						  		<h2>In-Store &amp; Online Coupon</h2>
@@ -335,7 +447,7 @@
 						  		</div>
 					  		</div>
 
-					  		<div class="merchant-coupon-area">
+					  		<div class="merchant-coupon-area kohls-fire">
 					  			<div class="merchant-info" horizontal layout center>
 						  			<div class="merchant-logo">
 						  				<img src="img/kohls-logo.png" alt="">
@@ -401,7 +513,7 @@
 					  		<div class="list-container">
 			    				<div class="merchant-list-area">
 						  			<ul class="unstyled">
-						  				<li class="merchant-info popular" horizontal layout>
+						  				<li class="merchant-info popular kohls-fire" horizontal layout>
 						  					<div class="rank">1</div>
 								  			<div class="merchant-left">
 								  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/l/kohls.com-coupons.jpg) no-repeat center center; background-size: contain"></div>
@@ -477,7 +589,7 @@
 								  				<p class = "smaller">save</p>
 								  			</div>
 								  		</li>
-								  		<li class="merchant-info popular" horizontal layout>
+								  		<li class="merchant-info popular kohls-fire" horizontal layout>
 								  			<div class="rank">5</div>
 								  			<div class="merchant-left">
 								  				<div class="merchant-logo" style="background: url(http://o.rmncdn.com/thumbs/logos/l/kohls.com-coupons.jpg) no-repeat center center; background-size: contain"></div>
@@ -623,8 +735,55 @@
     $('#store-map-button').click(function(){
     	$('#store-list').addClass('hidden');
     	$('#store-map').removeClass('hidden');
-    	map.resize();
+    	map.refresh();
     });
+
+    $('#mall-list-button').click(function(){
+    	$('#mall-map').addClass('hidden');
+    	$('#mall-list').removeClass('hidden');
+    });
+
+    $('#mall-map-button').click(function(){
+    	$('#mall-list').addClass('hidden');
+    	$('#mall-map').removeClass('hidden');
+    	map.refresh();
+    });
+
+    $('#food-list-button').click(function(){
+    	$('#food-map').addClass('hidden');
+    	$('#food-list').removeClass('hidden');
+    });
+
+    $('#food-map-button').click(function(){
+    	$('#food-list').addClass('hidden');
+    	$('#food-map').removeClass('hidden');
+    	map.refresh();
+    });
+
+    $('.save-icon').click(function(){
+    	$(this).next().toggleClass('clicked');
+    });
+
+    $('#search-picture').click(function(){
+    	$('#search-picture').addClass('hidden');
+    });
+
+    $('.search-container').click(function(){
+    	$('#search-picture').removeClass('hidden');
+    });
+
+    $('.search-button').click(function(){
+    	$('#search-picture').removeClass('hidden');
+    });
+
+    $('.kohls-fire').click(function(){
+    	$('#kohls-picture').removeClass('hidden');
+    });
+
+    $('#kohls-picture').click(function(){
+    	$('#kohls-picture').addClass('hidden');
+    });
+ 
 
   </script>
  

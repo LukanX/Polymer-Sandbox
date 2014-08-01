@@ -38,6 +38,30 @@ a{
 	text-decoration: none;
 }
 
+#search-picture{
+	height: 100%;
+	width: 100%;
+	z-index: 900;
+	position: absolute;
+	top:0;
+	left:0;
+	background: url(../img/search.jpg) no-repeat top left;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+#kohls-picture{
+	height: 100%;
+	width: 100%;
+	z-index: 900;
+	position: absolute;
+	top:0;
+	left:0;
+	background: url(../img/store.jpg) no-repeat top left;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
 .pane{
 	display: none;
 	&.core-selected{
@@ -501,6 +525,9 @@ core-toolbar{
 				&.inside{
 					fill:white;
 					z-index:5;
+					&.clicked{
+						fill: #ECDA1F;
+					}
 				}
 			}
 		}
