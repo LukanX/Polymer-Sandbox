@@ -539,6 +539,68 @@ a {
   #favorites-picture img, #saved-picture img {
     width: 100%; }
 
+.me-container {
+  padding: 3em .5em 2em;
+  background: #F2F2F2; }
+
+.profile-area {
+  background: #fff;
+  padding: 1em; }
+  .profile-area a {
+    font-size: .75em; }
+  .profile-area h4 {
+    margin-top: 0;
+    margin-bottom: .5em; }
+  .profile-area p {
+    font-size: .75em;
+    margin: .25em 0; }
+  .profile-area core-icon {
+    margin-right: .5em;
+    fill: rgba(0, 0, 0, 0.25); }
+
+.section-header {
+  margin-bottom: .5em;
+  text-transform: uppercase; }
+  .section-header span {
+    font-size: .75em;
+    float: right; }
+
+.me-area {
+  padding-bottom: 1em; }
+  .me-area li {
+    padding: 1em .5em;
+    background-color: #fff;
+    margin-bottom: .5em;
+    border-radius: .25em; }
+
+.setting-area {
+  background: #fff;
+  border-radius: .25em; }
+  .setting-area li {
+    border-bottom: 1px solid #ECECEC;
+    padding: 1em; }
+    .setting-area li h4 {
+      margin-top: 0; }
+    .setting-area li:last-child {
+      border-bottom: none; }
+    .setting-area li .need-space {
+      margin-right: 2em; }
+
+.toggle {
+  color: white;
+  padding: .25em 1em;
+  background: #36A6CF;
+  margin: 0; }
+
+.photo-area {
+  text-align: center;
+  margin-right: 1em; }
+
+.photo-box {
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.15); }
+
 .pane {
   display: none; }
   .pane.core-selected {
@@ -971,6 +1033,11 @@ p.smaller {
   text-transform: uppercase;
   border-radius: .25em;
   width: 90%; }
+  .button.button-small {
+    font-size: .75em;
+    padding: .5em .75em; }
+  .button.button-center {
+    margin: auto; }
 
 .sub-nav-pane {
   display: none; }

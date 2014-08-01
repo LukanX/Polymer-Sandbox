@@ -20,6 +20,8 @@
   <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
   <link rel="import" href="bower_components/core-icon/core-icon.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+  <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html">
   <link rel="import" href="bower_components/paper-input/paper-input.html">
   <link rel="import" href="custom_components/featured-coupon.html">
   <link rel="import" href="custom_components/coupon-tile.html">
@@ -105,6 +107,172 @@
 		
 		
 		<core-selector id="pane-selector" valueattr="pane" selected="offers" target="{{$.bottom-nav}}" itemSelector = "paper-tabs#bottom-tabs">
+
+		<!-- ########### ME ########-->
+		  <core-scroll-header-panel pane="me" fixed>
+		  	<core-toolbar class = "rmn-secondary">
+		  		<div flex self-center>
+						<img  src="img/logo.png" alt="" id="small-logo">
+		  		</div>
+		  		<core-icon icon="search" size="32" class="search-button"></core-icon>
+		    	<div class ="bottom fit navbar" id="saved-navbar">
+			      <paper-tabs id="me-nav" class="top-nav" valueattr="name" selected="profile" self-end noink="true" pane="nearby">
+			        <paper-tab id="profile" name="profile">Me</paper-tab>
+			      </paper-tabs>
+		      </div>
+		    </core-toolbar>
+		    <div class="content container" layout vertical>
+		    	<div class="top-bumper"></div>
+		    	<div id="mobile-notifications-panel" class= "hidden">
+		    		<div class="me-container">
+			    		<h4 class = "section-header">mobile notifications <span><a class="to-profile">back to profile &raquo;</a></span></h4>
+			    		<div class="setting-area">
+			    			<ul class="unstyled">
+			    				<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Nearby Offers</h4>
+			    							<p>Be notified when there are offers near your location</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+			    				</li>
+			    				<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Tap Offers</h4>
+			    							<p>Be notified when your favorite stores add new offers</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+									</li>
+									<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Expiring Offers</h4>
+			    							<p>Be notified when there are offers near your location</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+									</li>
+									<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Coupon Swarm!</h4>
+			    							<p>Get a notification when lots of people near you are using the same coupon.</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+									</li>
+									<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Food Offers</h4>
+			    							<p>Feeling hungry? Be notified when there are great breakfast, lunch, or dinner offers near you.</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+									</li>
+									<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Entertainment Offers</h4>
+			    							<p>Need a night out on the town? Get notifications when there are offers for events and entertainment in your area.</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+									</li>
+			    			</ul>
+			    		</div>
+			    		<div class="bumper"></div>
+			    	</div>
+		    	</div>
+		    	<div id="email-notifications-panel" class="hidden">
+		    		<div class="me-container">
+			    		<h4 class = "section-header">email notifications <span><a class="to-profile">back to profile &raquo;</a></span></h4>
+			    		<div class="setting-area">
+			    			<ul class="unstyled">
+			    				<li>
+			    					<div layout horizontal>
+			    						<div flex class="need-space">
+			    							<h4>Saved Coupon Emails</h4>
+			    							<p>Be Notified by email when your saved offers are about to expire</p>
+			    						</div>
+			    						<div> <p class="toggle">ON</p></div>
+			    					</div>
+			    				</li>
+			    				<li>
+			    					<h4>Favorite Store Deal Alerts</h4>
+			    					<p>Receive emails with new deals from your favorite stores</p>
+			    					<paper-radio-group selected="often">
+										  <paper-radio-button name="often" label="Often (1-7 Time Per Week)"></paper-radio-button>
+										  <paper-radio-button name="once" label="Once Per Week"></paper-radio-button><br>
+										  <paper-radio-button name="never" label="Never"></paper-radio-button>
+										</paper-radio-group>
+									</li>
+									<li>
+			    					<h4>Best of Retail Me Not</h4>
+			    					<p>Receive emails with new deals from your favorite stores</p>
+			    					<paper-radio-group selected="often">
+										  <paper-radio-button name="often" label="Often (4-6 Time Per Week)"></paper-radio-button>
+										  <paper-radio-button name="occasionally" label="Every now &amp; then"></paper-radio-button><br>
+										  <paper-radio-button name="never" label="Never"></paper-radio-button>
+										</paper-radio-group>
+									</li>
+									<li>
+										<p class="button button-center">unsubscribe from all emails</p>
+									</li>
+			    			</ul>
+			    		</div>
+			    		<div class="bumper"></div>
+			    	</div>
+		    	</div>
+		    	<div id="profile-panel">
+		    		<div class="me-container">
+		    			<h4 class="section-header">Profile</h4>
+			    		<div class="profile-area" layout horizontal>
+			    			<div class="photo-area">
+				    			<div class="photo-box"></div>
+				    			<p class="button button-small button-center "style="margin-top: 1em;">add photo</p>
+				    		</div>
+				    		<div  flex layout vertical>
+					    		<h4>Hello <span class="name-out"></span>!</h4>
+					    		<p><core-icon icon="mail" size="16"></core-icon><span class="email-out">add email</span></p>
+					    		<p><core-icon icon="lock" size="16"></core-icon>*********</p>
+					    		<p><core-icon icon="maps:place" size="16"></core-icon><a href="">add location</a><p>
+					    		<p><core-icon icon="social:cake" size="16"></core-icon><a href="">add birthday</a><p>
+					    		<p><core-icon icon="account-circle" size="16"></core-icon><a href="">add gender</a><p>
+					    	</div>
+					    	<div><a href="">edit profile</a></div>
+				    	</div>
+				    	<h4 class="section-header">settings</h4>
+				    	<div class="me-area" layout vertical>
+					    	<ul class="unstyled">
+					    		<a><li id="email-notifications">Email Notifications</li></a>
+					    		<a><li id="mobile-notifications">Mobile Notifications</li></a>
+					    		<a><li>Sign Out</li></a>
+					    	</ul>
+				    	</div>
+				    	<h4 class="section-header">favorites</h4>
+				    	<div class="me-area" layout vertical>
+					    	<ul class="unstyled">
+					    		<a><li>Favorite Stores</li></a>
+					    		<a><li>Favorite Categories</li></a>
+					    	</ul>
+				    	</div>
+				    	<h4 class="section-header">about retailmenot</h4>
+				    	<div class="me-area" layout vertical>
+					    	<ul class="unstyled">
+					    		<a><li>Contact Us</li></a>
+					    		<a><li>Privacy Policy</li></a>
+					    		<a><li>Terms of Use</li></a>
+					    	</ul>
+				    	</div>
+				    	<div class="bumper"></div>
+				    </div>
+		    	</div>
+			  </div>
+			</core-scroll-header-panel>
 
 			<!-- ########### Saved ########-->
 		  <core-scroll-header-panel pane="saved" fixed>
@@ -834,6 +1002,22 @@
 
     $('#offer-picture').click(function(){
     	$('#offer-picture').addClass('hidden');
+    });
+
+    $('.to-profile').click(function(){
+    	$('#profile-panel').removeClass('hidden');
+    	$('#email-notifications-panel').addClass('hidden');
+    	$('#mobile-notifications-panel').addClass('hidden');
+    });
+
+    $('#email-notifications').click(function(){
+    	$('#profile-panel').addClass('hidden');
+    	$('#email-notifications-panel').removeClass('hidden');
+    });
+
+    $('#mobile-notifications').click(function(){
+    	$('#profile-panel').addClass('hidden');
+    	$('#mobile-notifications-panel').removeClass('hidden');
     });
  
 

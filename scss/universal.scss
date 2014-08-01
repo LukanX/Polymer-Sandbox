@@ -92,6 +92,84 @@ a{
 	}
 }
 
+.me-container{
+	padding: 3em .5em 2em;
+	background: #F2F2F2;
+}
+
+.profile-area{
+	background: #fff;
+	padding: 1em;
+	a{
+		font-size: .75em;
+	}
+	h4{
+		margin-top: 0;
+		margin-bottom: .5em;
+	}
+	p{
+		font-size: .75em;
+		margin: .25em 0;
+	}
+	core-icon{
+		margin-right: .5em;
+		fill: rgba(0,0,0,.25)
+	}
+}
+
+.section-header{
+		margin-bottom: .5em;
+		text-transform: uppercase;
+		span{
+			font-size: .75em;
+			float: right;
+		}
+	}
+
+.me-area{
+	padding-bottom: 1em;
+	li{
+		padding: 1em .5em;
+		background-color: #fff;
+		margin-bottom: .5em;
+		border-radius: .25em;
+	}
+}
+
+.setting-area{
+	background: #fff;
+	border-radius: .25em;
+	li{
+		h4{
+			margin-top: 0;
+		}
+		border-bottom: 1px solid #ECECEC;
+		padding: 1em;
+		&:last-child{
+			border-bottom: none;
+		}
+		.need-space{
+			margin-right: 2em;
+		}
+	}
+}
+
+.toggle{
+	color: white;
+	padding: .25em 1em;
+	background: #36A6CF;
+	margin: 0;
+}
+.photo-area{
+	text-align: center;
+	margin-right: 1em;
+}
+.photo-box{
+	width: 100px;
+	height: 100px;
+	background: rgba(0,0,0,.15);
+}
+
 .pane{
 	display: none;
 	&.core-selected{
@@ -614,6 +692,13 @@ core-toolbar{
 		text-transform: uppercase;
 		border-radius: .25em;
 		width: 90%;
+		&.button-small{
+			font-size: .75em;
+			padding: .5em .75em;
+		}
+		&.button-center{
+			margin: auto;
+		}
 	}
 
 	.sub-nav-pane{
